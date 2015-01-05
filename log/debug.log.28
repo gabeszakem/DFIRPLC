@@ -1,0 +1,432 @@
+[2014-05-28 00:01:12.651]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 6607370100
+[2014-05-28 00:01:12.652]	[dfirplc.process.ProcessDB882] SelectDB882 :6607370100 tekercs elkészült. 2519 record rögzítve
+[2014-05-28 00:01:12.685]	[dfirplc.process.ProcessDB882] SelectDB882 :6607370100 bytebuffer mérete: 448382
+[2014-05-28 00:01:12.712]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('6607370100','2014-05-27 23:51:59','2014-05-27 23:59:20','record')
+[2014-05-28 00:14:43.821]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 66073801
+[2014-05-28 00:14:43.822]	[dfirplc.process.ProcessDB882] SelectDB882 :66073801 tekercs elkészült. 2712 record rögzítve
+[2014-05-28 00:14:43.860]	[dfirplc.process.ProcessDB882] SelectDB882 :66073801 bytebuffer mérete: 482736
+[2014-05-28 00:14:43.890]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('66073801','2014-05-28 00:04:36','2014-05-28 00:12:29','record')
+[2014-05-28 00:32:35.081]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664045
+[2014-05-28 00:32:35.082]	[dfirplc.process.ProcessDB882] SelectDB882 :664045 tekercs elkészült. 3458 record rögzítve
+[2014-05-28 00:32:35.128]	[dfirplc.process.ProcessDB882] SelectDB882 :664045 bytebuffer mérete: 615524
+[2014-05-28 00:32:35.164]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664045','2014-05-28 00:19:20','2014-05-28 00:29:24','record')
+[2014-05-28 00:48:13.280]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664043
+[2014-05-28 00:48:13.281]	[dfirplc.process.ProcessDB882] SelectDB882 :664043 tekercs elkészült. 3231 record rögzítve
+[2014-05-28 00:48:13.428]	[dfirplc.process.ProcessDB882] SelectDB882 :664043 bytebuffer mérete: 575118
+[2014-05-28 00:48:13.462]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664043','2014-05-28 00:36:23','2014-05-28 00:45:47','record')
+[2014-05-28 01:04:01.621]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664044
+[2014-05-28 01:04:01.622]	[dfirplc.process.ProcessDB882] SelectDB882 :664044 tekercs elkészült. 3347 record rögzítve
+[2014-05-28 01:04:01.665]	[dfirplc.process.ProcessDB882] SelectDB882 :664044 bytebuffer mérete: 595766
+[2014-05-28 01:04:01.697]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664044','2014-05-28 00:51:39','2014-05-28 01:01:23','record')
+[2014-05-28 01:13:56.808]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664879
+[2014-05-28 01:13:56.808]	[dfirplc.process.ProcessDB882] SelectDB882 :664879 tekercs elkészült. 1402 record rögzítve
+[2014-05-28 01:13:56.828]	[dfirplc.process.ProcessDB882] SelectDB882 :664879 bytebuffer mérete: 249556
+[2014-05-28 01:13:56.848]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664879','2014-05-28 01:07:24','2014-05-28 01:11:30','record')
+[2014-05-28 01:25:28.937]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664888
+[2014-05-28 01:25:28.937]	[dfirplc.process.ProcessDB882] SelectDB882 :664888 tekercs elkészült. 1671 record rögzítve
+[2014-05-28 01:25:28.961]	[dfirplc.process.ProcessDB882] SelectDB882 :664888 bytebuffer mérete: 297438
+[2014-05-28 01:25:28.988]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664888','2014-05-28 01:18:38','2014-05-28 01:23:30','record')
+[2014-05-28 01:36:49.075]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664891
+[2014-05-28 01:36:49.075]	[dfirplc.process.ProcessDB882] SelectDB882 :664891 tekercs elkészült. 1343 record rögzítve
+[2014-05-28 01:36:49.096]	[dfirplc.process.ProcessDB882] SelectDB882 :664891 bytebuffer mérete: 239054
+[2014-05-28 01:36:49.116]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664891','2014-05-28 01:30:40','2014-05-28 01:34:35','record')
+[2014-05-28 02:12:58.391]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664885
+[2014-05-28 02:12:58.392]	[dfirplc.process.ProcessDB882] SelectDB882 :664885 tekercs elkészült. 1713 record rögzítve
+[2014-05-28 02:12:58.416]	[dfirplc.process.ProcessDB882] SelectDB882 :664885 bytebuffer mérete: 304914
+[2014-05-28 02:12:58.439]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664885','2014-05-28 02:06:06','2014-05-28 02:11:07','record')
+[2014-05-28 02:27:55.554]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664886
+[2014-05-28 02:27:55.554]	[dfirplc.process.ProcessDB882] SelectDB882 :664886 tekercs elkészült. 1450 record rögzítve
+[2014-05-28 02:27:55.579]	[dfirplc.process.ProcessDB882] SelectDB882 :664886 bytebuffer mérete: 258100
+[2014-05-28 02:27:55.604]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664886','2014-05-28 02:21:45','2014-05-28 02:25:59','record')
+[2014-05-28 02:37:37.720]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664882
+[2014-05-28 02:37:37.720]	[dfirplc.process.ProcessDB882] SelectDB882 :664882 tekercs elkészült. 1312 record rögzítve
+[2014-05-28 02:37:37.740]	[dfirplc.process.ProcessDB882] SelectDB882 :664882 bytebuffer mérete: 233536
+[2014-05-28 02:37:37.760]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664882','2014-05-28 02:31:51','2014-05-28 02:35:41','record')
+[2014-05-28 02:46:17.828]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664883
+[2014-05-28 02:46:17.828]	[dfirplc.process.ProcessDB882] SelectDB882 :664883 tekercs elkészült. 1276 record rögzítve
+[2014-05-28 02:46:17.847]	[dfirplc.process.ProcessDB882] SelectDB882 :664883 bytebuffer mérete: 227128
+[2014-05-28 02:46:17.866]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664883','2014-05-28 02:40:49','2014-05-28 02:44:34','record')
+[2014-05-28 02:55:10.935]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664898
+[2014-05-28 02:55:10.935]	[dfirplc.process.ProcessDB882] SelectDB882 :664898 tekercs elkészült. 1374 record rögzítve
+[2014-05-28 02:55:10.957]	[dfirplc.process.ProcessDB882] SelectDB882 :664898 bytebuffer mérete: 244572
+[2014-05-28 02:55:10.978]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664898','2014-05-28 02:49:19','2014-05-28 02:53:21','record')
+[2014-05-28 03:05:54.060]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664887
+[2014-05-28 03:05:54.061]	[dfirplc.process.ProcessDB882] SelectDB882 :664887 tekercs elkészült. 1490 record rögzítve
+[2014-05-28 03:05:54.085]	[dfirplc.process.ProcessDB882] SelectDB882 :664887 bytebuffer mérete: 265220
+[2014-05-28 03:05:54.106]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664887','2014-05-28 02:59:42','2014-05-28 03:04:03','record')
+[2014-05-28 03:16:12.184]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664880
+[2014-05-28 03:16:12.185]	[dfirplc.process.ProcessDB882] SelectDB882 :664880 tekercs elkészült. 1673 record rögzítve
+[2014-05-28 03:16:12.207]	[dfirplc.process.ProcessDB882] SelectDB882 :664880 bytebuffer mérete: 297794
+[2014-05-28 03:16:12.230]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664880','2014-05-28 03:09:23','2014-05-28 03:14:15','record')
+[2014-05-28 03:26:17.312]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664881
+[2014-05-28 03:26:17.313]	[dfirplc.process.ProcessDB882] SelectDB882 :664881 tekercs elkészült. 1733 record rögzítve
+[2014-05-28 03:26:17.337]	[dfirplc.process.ProcessDB882] SelectDB882 :664881 bytebuffer mérete: 308474
+[2014-05-28 03:26:17.360]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664881','2014-05-28 03:19:25','2014-05-28 03:24:28','record')
+[2014-05-28 03:42:11.580]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664042
+[2014-05-28 03:42:11.581]	[dfirplc.process.ProcessDB882] SelectDB882 :664042 tekercs elkészült. 3363 record rögzítve
+[2014-05-28 03:42:11.623]	[dfirplc.process.ProcessDB882] SelectDB882 :664042 bytebuffer mérete: 598614
+[2014-05-28 03:42:11.659]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664042','2014-05-28 03:29:53','2014-05-28 03:39:40','record')
+[2014-05-28 03:58:58.783]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664049
+[2014-05-28 03:58:58.784]	[dfirplc.process.ProcessDB882] SelectDB882 :664049 tekercs elkészült. 3702 record rögzítve
+[2014-05-28 03:58:58.828]	[dfirplc.process.ProcessDB882] SelectDB882 :664049 bytebuffer mérete: 658956
+[2014-05-28 03:58:58.869]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664049','2014-05-28 03:45:07','2014-05-28 03:55:52','record')
+[2014-05-28 04:13:41.053]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664048
+[2014-05-28 04:13:41.054]	[dfirplc.process.ProcessDB882] SelectDB882 :664048 tekercs elkészült. 3367 record rögzítve
+[2014-05-28 04:13:41.093]	[dfirplc.process.ProcessDB882] SelectDB882 :664048 bytebuffer mérete: 599326
+[2014-05-28 04:13:41.127]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664048','2014-05-28 04:01:15','2014-05-28 04:11:03','record')
+[2014-05-28 04:16:11.565]	[dfirplc.process.ProcessDB884] SelectDB884 : Lecsévélő tekercslevétel: 664046
+[2014-05-28 04:17:37.580]	[dfirplc.process.ProcessDB884] SelectDB884 : Lecsévélő tekercslevétel: 664046
+[2014-05-28 04:36:55.376]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664046
+[2014-05-28 04:36:55.376]	[dfirplc.process.ProcessDB882] SelectDB882 :664046 tekercs elkészült. 4595 record rögzítve
+[2014-05-28 04:36:55.430]	[dfirplc.process.ProcessDB882] SelectDB882 :664046 bytebuffer mérete: 817910
+[2014-05-28 04:36:55.478]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664046','2014-05-28 04:20:07','2014-05-28 04:33:28','record')
+[2014-05-28 04:59:16.656]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664583
+[2014-05-28 04:59:16.657]	[dfirplc.process.ProcessDB882] SelectDB882 :664583 tekercs elkészült. 4318 record rögzítve
+[2014-05-28 04:59:16.704]	[dfirplc.process.ProcessDB882] SelectDB882 :664583 bytebuffer mérete: 768604
+[2014-05-28 04:59:16.747]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664583','2014-05-28 04:40:43','2014-05-28 04:57:18','record')
+[2014-05-28 05:14:25.867]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664591
+[2014-05-28 05:14:25.868]	[dfirplc.process.ProcessDB882] SelectDB882 :664591 tekercs elkészült. 3450 record rögzítve
+[2014-05-28 05:14:25.909]	[dfirplc.process.ProcessDB882] SelectDB882 :664591 bytebuffer mérete: 614100
+[2014-05-28 05:14:25.950]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664591','2014-05-28 05:02:32','2014-05-28 05:12:34','record')
+[2014-05-28 05:45:21.202]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664572
+[2014-05-28 05:45:21.203]	[dfirplc.process.ProcessDB882] SelectDB882 :664572 tekercs elkészült. 3392 record rögzítve
+[2014-05-28 05:45:21.244]	[dfirplc.process.ProcessDB882] SelectDB882 :664572 bytebuffer mérete: 603776
+[2014-05-28 05:45:21.280]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664572','2014-05-28 05:29:47','2014-05-28 05:43:30','record')
+[2014-05-28 05:59:38.400]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664573
+[2014-05-28 05:59:38.401]	[dfirplc.process.ProcessDB882] SelectDB882 :664573 tekercs elkészült. 2683 record rögzítve
+[2014-05-28 05:59:38.435]	[dfirplc.process.ProcessDB882] SelectDB882 :664573 bytebuffer mérete: 477574
+[2014-05-28 05:59:38.468]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664573','2014-05-28 05:50:03','2014-05-28 05:57:52','record')
+[2014-05-28 06:12:44.570]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664570
+[2014-05-28 06:12:44.570]	[dfirplc.process.ProcessDB882] SelectDB882 :664570 tekercs elkészült. 2695 record rögzítve
+[2014-05-28 06:12:44.607]	[dfirplc.process.ProcessDB882] SelectDB882 :664570 bytebuffer mérete: 479710
+[2014-05-28 06:12:44.636]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664570','2014-05-28 06:02:59','2014-05-28 06:10:49','record')
+[2014-05-28 06:31:10.788]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664574
+[2014-05-28 06:31:10.788]	[dfirplc.process.ProcessDB882] SelectDB882 :664574 tekercs elkészült. 3133 record rögzítve
+[2014-05-28 06:31:10.827]	[dfirplc.process.ProcessDB882] SelectDB882 :664574 bytebuffer mérete: 557674
+[2014-05-28 06:31:10.862]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664574','2014-05-28 06:19:32','2014-05-28 06:28:39','record')
+[2014-05-28 06:45:13.971]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664578
+[2014-05-28 06:45:13.973]	[dfirplc.process.ProcessDB882] SelectDB882 :664578 tekercs elkészült. 3227 record rögzítve
+[2014-05-28 06:45:14.006]	[dfirplc.process.ProcessDB882] SelectDB882 :664578 bytebuffer mérete: 574406
+[2014-05-28 06:45:14.046]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664578','2014-05-28 06:34:04','2014-05-28 06:43:26','record')
+[2014-05-28 07:00:59.983]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 8
+[2014-05-28 07:00:59.999]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 07:01:00.183]	[dfirplc.net.FillDataFromBuffer] (warning) (DB882) FillDataFromBuffer : Hibás telegramhossz: 560
+[2014-05-28 07:01:00.183]	[dfirplc.net.FillDataFromBuffer] (warning) (DB882) FillDataFromBuffer : Hibás telegramhossz: 22
+[2014-05-28 07:01:00.184]	[dfirplc.net.FillDataFromBuffer] (DB882) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 07:05:47.219]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664581
+[2014-05-28 07:05:47.219]	[dfirplc.process.ProcessDB882] SelectDB882 :664581 tekercs elkészült. 3700 record rögzítve
+[2014-05-28 07:05:47.265]	[dfirplc.process.ProcessDB882] SelectDB882 :664581 bytebuffer mérete: 658600
+[2014-05-28 07:05:47.302]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664581','2014-05-28 06:51:36','2014-05-28 07:04:00','record')
+[2014-05-28 07:32:34.519]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664586
+[2014-05-28 07:32:34.519]	[dfirplc.process.ProcessDB882] SelectDB882 :664586 tekercs elkészült. 5781 record rögzítve
+[2014-05-28 07:32:34.695]	[dfirplc.process.ProcessDB882] SelectDB882 :664586 bytebuffer mérete: 1029018
+[2014-05-28 07:32:34.786]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664586','2014-05-28 07:11:33','2014-05-28 07:30:47','record')
+[2014-05-28 07:45:42.895]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664582
+[2014-05-28 07:45:42.896]	[dfirplc.process.ProcessDB882] SelectDB882 :664582 tekercs elkészült. 2809 record rögzítve
+[2014-05-28 07:45:42.931]	[dfirplc.process.ProcessDB882] SelectDB882 :664582 bytebuffer mérete: 500002
+[2014-05-28 07:45:42.961]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664582','2014-05-28 07:35:43','2014-05-28 07:43:54','record')
+[2014-05-28 07:58:24.059]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664594
+[2014-05-28 07:58:24.059]	[dfirplc.process.ProcessDB882] SelectDB882 :664594 tekercs elkészült. 2422 record rögzítve
+[2014-05-28 07:58:24.088]	[dfirplc.process.ProcessDB882] SelectDB882 :664594 bytebuffer mérete: 431116
+[2014-05-28 07:58:24.118]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664594','2014-05-28 07:49:40','2014-05-28 07:56:43','record')
+[2014-05-28 08:10:56.217]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664579
+[2014-05-28 08:10:56.217]	[dfirplc.process.ProcessDB882] SelectDB882 :664579 tekercs elkészült. 2081 record rögzítve
+[2014-05-28 08:10:56.349]	[dfirplc.process.ProcessDB882] SelectDB882 :664579 bytebuffer mérete: 370418
+[2014-05-28 08:10:56.374]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664579','2014-05-28 08:03:12','2014-05-28 08:09:15','record')
+[2014-05-28 08:15:00.895]	[dfirplc.process.ProcessDB884] SelectDB884 : Lecsévélő tekercslevétel: 
+[2014-05-28 08:33:55.552]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664571
+[2014-05-28 08:33:55.553]	[dfirplc.process.ProcessDB882] SelectDB882 :664571 tekercs elkészült. 2711 record rögzítve
+[2014-05-28 08:33:55.590]	[dfirplc.process.ProcessDB882] SelectDB882 :664571 bytebuffer mérete: 482558
+[2014-05-28 08:33:55.622]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664571','2014-05-28 08:24:17','2014-05-28 08:32:12','record')
+[2014-05-28 08:51:04.824]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664568
+[2014-05-28 08:51:04.824]	[dfirplc.process.ProcessDB882] SelectDB882 :664568 tekercs elkészült. 2710 record rögzítve
+[2014-05-28 08:51:04.860]	[dfirplc.process.ProcessDB882] SelectDB882 :664568 bytebuffer mérete: 482380
+[2014-05-28 08:51:04.890]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664568','2014-05-28 08:40:55','2014-05-28 08:48:48','record')
+[2014-05-28 09:06:46.022]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664575
+[2014-05-28 09:06:46.024]	[dfirplc.process.ProcessDB882] SelectDB882 :664575 tekercs elkészült. 2375 record rögzítve
+[2014-05-28 09:06:46.055]	[dfirplc.process.ProcessDB882] SelectDB882 :664575 bytebuffer mérete: 422750
+[2014-05-28 09:06:46.083]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664575','2014-05-28 08:54:06','2014-05-28 09:04:42','record')
+[2014-05-28 09:21:47.199]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664567
+[2014-05-28 09:21:47.200]	[dfirplc.process.ProcessDB882] SelectDB882 :664567 tekercs elkészült. 2595 record rögzítve
+[2014-05-28 09:21:47.229]	[dfirplc.process.ProcessDB882] SelectDB882 :664567 bytebuffer mérete: 461910
+[2014-05-28 09:21:47.261]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664567','2014-05-28 09:12:26','2014-05-28 09:19:59','record')
+[2014-05-28 09:34:43.385]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664576
+[2014-05-28 09:34:43.385]	[dfirplc.process.ProcessDB882] SelectDB882 :664576 tekercs elkészült. 2667 record rögzítve
+[2014-05-28 09:34:43.415]	[dfirplc.process.ProcessDB882] SelectDB882 :664576 bytebuffer mérete: 474726
+[2014-05-28 09:34:43.444]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664576','2014-05-28 09:24:51','2014-05-28 09:32:37','record')
+[2014-05-28 09:49:52.561]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664577
+[2014-05-28 09:49:52.562]	[dfirplc.process.ProcessDB882] SelectDB882 :664577 tekercs elkészült. 2353 record rögzítve
+[2014-05-28 09:49:52.590]	[dfirplc.process.ProcessDB882] SelectDB882 :664577 bytebuffer mérete: 418834
+[2014-05-28 09:49:52.616]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664577','2014-05-28 09:40:39','2014-05-28 09:47:30','record')
+[2014-05-28 09:51:00.949]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 8
+[2014-05-28 09:51:00.961]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 09:54:50.075]	[dfirplc.net.FillDataFromBuffer] (warning) (DB882) FillDataFromBuffer : Hibás telegramhossz: 560
+[2014-05-28 09:54:50.075]	[dfirplc.net.FillDataFromBuffer] (warning) (DB882) FillDataFromBuffer : Hibás telegramhossz: 22
+[2014-05-28 09:54:50.076]	[dfirplc.net.FillDataFromBuffer] (DB882) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 09:54:50.449]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 8
+[2014-05-28 09:54:50.463]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 10:01:50.199]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 8
+[2014-05-28 10:01:50.211]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 10:03:33.721]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664600
+[2014-05-28 10:03:33.721]	[dfirplc.process.ProcessDB882] SelectDB882 :664600 tekercs elkészült. 2535 record rögzítve
+[2014-05-28 10:03:33.756]	[dfirplc.process.ProcessDB882] SelectDB882 :664600 bytebuffer mérete: 451230
+[2014-05-28 10:03:33.783]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664600','2014-05-28 09:53:49','2014-05-28 10:01:26','record')
+[2014-05-28 10:25:35.041]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664596
+[2014-05-28 10:25:35.042]	[dfirplc.process.ProcessDB882] SelectDB882 :664596 tekercs elkészült. 3939 record rögzítve
+[2014-05-28 10:25:35.091]	[dfirplc.process.ProcessDB882] SelectDB882 :664596 bytebuffer mérete: 701142
+[2014-05-28 10:25:35.139]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664596','2014-05-28 10:12:19','2014-05-28 10:23:46','record')
+[2014-05-28 10:45:35.404]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664604
+[2014-05-28 10:45:35.405]	[dfirplc.process.ProcessDB882] SelectDB882 :664604 tekercs elkészült. 3990 record rögzítve
+[2014-05-28 10:45:35.454]	[dfirplc.process.ProcessDB882] SelectDB882 :664604 bytebuffer mérete: 710220
+[2014-05-28 10:45:35.493]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664604','2014-05-28 10:31:06','2014-05-28 10:43:26','record')
+[2014-05-28 10:57:02.483]	[dfirplc.process.ProcessDB884] SelectDB884 : Lecsévélő tekercslevétel: 664603
+[2014-05-28 10:58:08.493]	[dfirplc.process.ProcessDB884] SelectDB884 : Lecsévélő tekercslevétel: 664603
+[2014-05-28 11:00:07.512]	[dfirplc.process.ProcessDB884] SelectDB884 : Lecsévélő tekercslevétel: 664603
+[2014-05-28 11:13:37.760]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664603
+[2014-05-28 11:13:37.760]	[dfirplc.process.ProcessDB882] SelectDB882 :664603 tekercs elkészült. 3823 record rögzítve
+[2014-05-28 11:13:37.807]	[dfirplc.process.ProcessDB882] SelectDB882 :664603 bytebuffer mérete: 680494
+[2014-05-28 11:13:37.846]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664603','2014-05-28 10:51:54','2014-05-28 11:11:50','record')
+[2014-05-28 11:34:27.015]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664605
+[2014-05-28 11:34:27.017]	[dfirplc.process.ProcessDB882] SelectDB882 :664605 tekercs elkészült. 3217 record rögzítve
+[2014-05-28 11:34:27.053]	[dfirplc.process.ProcessDB882] SelectDB882 :664605 bytebuffer mérete: 572626
+[2014-05-28 11:34:27.093]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664605','2014-05-28 11:21:56','2014-05-28 11:32:24','record')
+[2014-05-28 11:51:39.226]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664606
+[2014-05-28 11:51:39.226]	[dfirplc.process.ProcessDB882] SelectDB882 :664606 tekercs elkészült. 3445 record rögzítve
+[2014-05-28 11:51:39.271]	[dfirplc.process.ProcessDB882] SelectDB882 :664606 bytebuffer mérete: 613210
+[2014-05-28 11:51:39.306]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664606','2014-05-28 11:39:54','2014-05-28 11:49:56','record')
+[2014-05-28 12:18:20.617]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664564
+[2014-05-28 12:18:20.618]	[dfirplc.process.ProcessDB882] SelectDB882 :664564 tekercs elkészült. 6274 record rögzítve
+[2014-05-28 12:18:20.794]	[dfirplc.process.ProcessDB882] SelectDB882 :664564 bytebuffer mérete: 1116772
+[2014-05-28 12:18:20.889]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664564','2014-05-28 11:57:35','2014-05-28 12:15:49','record')
+[2014-05-28 12:23:10.255]	[dfirplc.process.ProcessDB884] SelectDB884 : Lecsévélő tekercslevétel: 
+[2014-05-28 12:38:54.060]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664564
+[2014-05-28 12:38:54.060]	[dfirplc.process.ProcessDB882] SelectDB882 :664564 tekercs elkészült. 3555 record rögzítve
+[2014-05-28 12:38:54.107]	[dfirplc.process.ProcessDB882] SelectDB882 :664564 bytebuffer mérete: 632790
+[2014-05-28 12:38:54.145]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664564','2014-05-28 12:18:20','2014-05-28 12:36:27','record')
+[2014-05-28 13:06:03.267]	[dfirplc.net.FillDataFromBuffer] (warning) (DB882) FillDataFromBuffer : Hibás telegramhossz: 560
+[2014-05-28 13:06:03.267]	[dfirplc.net.FillDataFromBuffer] (warning) (DB882) FillDataFromBuffer : Hibás telegramhossz: 22
+[2014-05-28 13:06:03.268]	[dfirplc.net.FillDataFromBuffer] (DB882) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 13:06:04.073]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 8
+[2014-05-28 13:06:04.085]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 13:15:42.444]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664675
+[2014-05-28 13:15:42.445]	[dfirplc.process.ProcessDB882] SelectDB882 :664675 tekercs elkészült. 2580 record rögzítve
+[2014-05-28 13:15:42.471]	[dfirplc.process.ProcessDB882] SelectDB882 :664675 bytebuffer mérete: 459240
+[2014-05-28 13:15:42.498]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664675','2014-05-28 13:05:49','2014-05-28 13:13:49','record')
+[2014-05-28 13:26:05.459]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 8
+[2014-05-28 13:26:05.471]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 13:31:04.219]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 8
+[2014-05-28 13:31:04.231]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 13:36:18.058]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 12
+[2014-05-28 13:36:18.075]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 13:39:51.298]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 8
+[2014-05-28 13:39:51.318]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 13:45:44.356]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 8
+[2014-05-28 13:45:44.371]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 13:49:46.759]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 8
+[2014-05-28 13:49:46.771]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 13:54:16.324]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 8
+[2014-05-28 13:54:16.336]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 13:54:19.978]	[dfirplc.process.ProcessDB884] SelectDB884 : Lecsévélő tekercslevétel: 
+[2014-05-28 14:02:09.067]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 8
+[2014-05-28 14:02:09.079]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 14:05:00.063]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 8
+[2014-05-28 14:05:00.075]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 14:31:24.086]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664675
+[2014-05-28 14:31:24.088]	[dfirplc.process.ProcessDB882] SelectDB882 :664675 tekercs elkészült. 1966 record rögzítve
+[2014-05-28 14:31:24.111]	[dfirplc.process.ProcessDB882] SelectDB882 :664675 bytebuffer mérete: 349948
+[2014-05-28 14:31:24.134]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664675','2014-05-28 13:15:42','2014-05-28 14:28:08','record')
+[2014-05-28 14:42:31.218]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664750
+[2014-05-28 14:42:31.219]	[dfirplc.process.ProcessDB882] SelectDB882 :664750 tekercs elkészült. 1015 record rögzítve
+[2014-05-28 14:42:31.238]	[dfirplc.process.ProcessDB882] SelectDB882 :664750 bytebuffer mérete: 180670
+[2014-05-28 14:42:31.256]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664750','2014-05-28 14:36:05','2014-05-28 14:39:24','record')
+[2014-05-28 14:53:06.341]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664751
+[2014-05-28 14:53:06.342]	[dfirplc.process.ProcessDB882] SelectDB882 :664751 tekercs elkészült. 881 record rögzítve
+[2014-05-28 14:53:06.360]	[dfirplc.process.ProcessDB882] SelectDB882 :664751 bytebuffer mérete: 156818
+[2014-05-28 14:53:06.377]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664751','2014-05-28 14:46:33','2014-05-28 14:49:09','record')
+[2014-05-28 15:12:15.528]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664747
+[2014-05-28 15:12:15.528]	[dfirplc.process.ProcessDB882] SelectDB882 :664747 tekercs elkészült. 847 record rögzítve
+[2014-05-28 15:12:15.542]	[dfirplc.process.ProcessDB882] SelectDB882 :664747 bytebuffer mérete: 150766
+[2014-05-28 15:12:15.558]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664747','2014-05-28 15:06:58','2014-05-28 15:09:28','record')
+[2014-05-28 15:21:04.630]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664752
+[2014-05-28 15:21:04.631]	[dfirplc.process.ProcessDB882] SelectDB882 :664752 tekercs elkészült. 804 record rögzítve
+[2014-05-28 15:21:04.643]	[dfirplc.process.ProcessDB882] SelectDB882 :664752 bytebuffer mérete: 143112
+[2014-05-28 15:21:04.655]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664752','2014-05-28 15:14:52','2014-05-28 15:17:14','record')
+[2014-05-28 15:34:14.754]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664749
+[2014-05-28 15:34:14.755]	[dfirplc.process.ProcessDB882] SelectDB882 :664749 tekercs elkészült. 814 record rögzítve
+[2014-05-28 15:34:14.772]	[dfirplc.process.ProcessDB882] SelectDB882 :664749 bytebuffer mérete: 144892
+[2014-05-28 15:34:14.788]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664749','2014-05-28 15:27:18','2014-05-28 15:29:41','record')
+[2014-05-28 15:43:30.901]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664746
+[2014-05-28 15:43:30.902]	[dfirplc.process.ProcessDB882] SelectDB882 :664746 tekercs elkészült. 1102 record rögzítve
+[2014-05-28 15:43:30.922]	[dfirplc.process.ProcessDB882] SelectDB882 :664746 bytebuffer mérete: 196156
+[2014-05-28 15:43:30.942]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664746','2014-05-28 15:37:26','2014-05-28 15:40:40','record')
+[2014-05-28 15:50:44.998]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664759
+[2014-05-28 15:50:44.999]	[dfirplc.process.ProcessDB882] SelectDB882 :664759 tekercs elkészült. 1057 record rögzítve
+[2014-05-28 15:50:45.016]	[dfirplc.process.ProcessDB882] SelectDB882 :664759 bytebuffer mérete: 188146
+[2014-05-28 15:50:45.034]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664759','2014-05-28 15:46:02','2014-05-28 15:49:08','record')
+[2014-05-28 15:52:22.913]	[dfirplc.process.ProcessDB884] SelectDB884 : Lecsévélő tekercslevétel: 
+[2014-05-28 15:59:43.103]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664762
+[2014-05-28 15:59:43.104]	[dfirplc.process.ProcessDB882] SelectDB882 :664762 tekercs elkészült. 1210 record rögzítve
+[2014-05-28 15:59:43.125]	[dfirplc.process.ProcessDB882] SelectDB882 :664762 bytebuffer mérete: 215380
+[2014-05-28 15:59:43.142]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664762','2014-05-28 15:54:24','2014-05-28 15:57:56','record')
+[2014-05-28 16:07:53.207]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664766
+[2014-05-28 16:07:53.208]	[dfirplc.process.ProcessDB882] SelectDB882 :664766 tekercs elkészült. 1074 record rögzítve
+[2014-05-28 16:07:53.221]	[dfirplc.process.ProcessDB882] SelectDB882 :664766 bytebuffer mérete: 191172
+[2014-05-28 16:07:53.236]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664766','2014-05-28 16:03:03','2014-05-28 16:06:12','record')
+[2014-05-28 16:16:45.302]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663505
+[2014-05-28 16:16:45.303]	[dfirplc.process.ProcessDB882] SelectDB882 :663505 tekercs elkészült. 1431 record rögzítve
+[2014-05-28 16:16:45.323]	[dfirplc.process.ProcessDB882] SelectDB882 :663505 bytebuffer mérete: 254718
+[2014-05-28 16:16:45.341]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663505','2014-05-28 16:10:52','2014-05-28 16:15:02','record')
+[2014-05-28 16:27:49.424]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663488
+[2014-05-28 16:27:49.425]	[dfirplc.process.ProcessDB882] SelectDB882 :663488 tekercs elkészült. 1388 record rögzítve
+[2014-05-28 16:27:49.446]	[dfirplc.process.ProcessDB882] SelectDB882 :663488 bytebuffer mérete: 247064
+[2014-05-28 16:27:49.465]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663488','2014-05-28 16:22:01','2014-05-28 16:26:05','record')
+[2014-05-28 16:40:56.580]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 6622540100
+[2014-05-28 16:40:56.580]	[dfirplc.process.ProcessDB882] SelectDB882 :6622540100 tekercs elkészült. 2301 record rögzítve
+[2014-05-28 16:40:56.614]	[dfirplc.process.ProcessDB882] SelectDB882 :6622540100 bytebuffer mérete: 409578
+[2014-05-28 16:40:56.640]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('6622540100','2014-05-28 16:30:41','2014-05-28 16:39:12','record')
+[2014-05-28 16:47:55.696]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664765
+[2014-05-28 16:47:55.697]	[dfirplc.process.ProcessDB882] SelectDB882 :664765 tekercs elkészült. 897 record rögzítve
+[2014-05-28 16:47:55.712]	[dfirplc.process.ProcessDB882] SelectDB882 :664765 bytebuffer mérete: 159666
+[2014-05-28 16:47:55.729]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664765','2014-05-28 16:43:37','2014-05-28 16:46:15','record')
+[2014-05-28 16:56:57.802]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664763
+[2014-05-28 16:56:57.802]	[dfirplc.process.ProcessDB882] SelectDB882 :664763 tekercs elkészült. 1187 record rögzítve
+[2014-05-28 16:56:57.823]	[dfirplc.process.ProcessDB882] SelectDB882 :664763 bytebuffer mérete: 211286
+[2014-05-28 16:56:57.842]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664763','2014-05-28 16:51:24','2014-05-28 16:54:53','record')
+[2014-05-28 17:05:12.911]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664761
+[2014-05-28 17:05:12.911]	[dfirplc.process.ProcessDB882] SelectDB882 :664761 tekercs elkészült. 1367 record rögzítve
+[2014-05-28 17:05:12.933]	[dfirplc.process.ProcessDB882] SelectDB882 :664761 bytebuffer mérete: 243326
+[2014-05-28 17:05:12.951]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664761','2014-05-28 16:59:36','2014-05-28 17:03:35','record')
+[2014-05-28 17:09:23.815]	[dfirplc.net.FillDataFromBuffer] (warning) (DB886) FillDataFromBuffer : Hibás telegramhossz: 8
+[2014-05-28 17:09:23.827]	[dfirplc.net.FillDataFromBuffer] (DB886) FillDataFromBuffer :Eltérő hosszúságú telegram feldolgozva
+[2014-05-28 17:21:07.074]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663370
+[2014-05-28 17:21:07.074]	[dfirplc.process.ProcessDB882] SelectDB882 :663370 tekercs elkészült. 1131 record rögzítve
+[2014-05-28 17:21:07.094]	[dfirplc.process.ProcessDB882] SelectDB882 :663370 bytebuffer mérete: 201318
+[2014-05-28 17:21:07.111]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663370','2014-05-28 17:12:37','2014-05-28 17:15:56','record')
+[2014-05-28 17:32:04.198]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664627
+[2014-05-28 17:32:04.199]	[dfirplc.process.ProcessDB882] SelectDB882 :664627 tekercs elkészült. 1115 record rögzítve
+[2014-05-28 17:32:04.220]	[dfirplc.process.ProcessDB882] SelectDB882 :664627 bytebuffer mérete: 198470
+[2014-05-28 17:32:04.239]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664627','2014-05-28 17:25:32','2014-05-28 17:28:48','record')
+[2014-05-28 17:44:28.362]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664625
+[2014-05-28 17:44:28.362]	[dfirplc.process.ProcessDB882] SelectDB882 :664625 tekercs elkészült. 2014 record rögzítve
+[2014-05-28 17:44:28.387]	[dfirplc.process.ProcessDB882] SelectDB882 :664625 bytebuffer mérete: 358492
+[2014-05-28 17:44:28.410]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664625','2014-05-28 17:35:46','2014-05-28 17:41:40','record')
+[2014-05-28 17:55:02.523]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664412
+[2014-05-28 17:55:02.524]	[dfirplc.process.ProcessDB882] SelectDB882 :664412 tekercs elkészült. 1278 record rögzítve
+[2014-05-28 17:55:02.541]	[dfirplc.process.ProcessDB882] SelectDB882 :664412 bytebuffer mérete: 227484
+[2014-05-28 17:55:02.556]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664412','2014-05-28 17:48:18','2014-05-28 17:52:01','record')
+[2014-05-28 18:10:02.674]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664236
+[2014-05-28 18:10:02.674]	[dfirplc.process.ProcessDB882] SelectDB882 :664236 tekercs elkészült. 2754 record rögzítve
+[2014-05-28 18:10:02.712]	[dfirplc.process.ProcessDB882] SelectDB882 :664236 bytebuffer mérete: 490212
+[2014-05-28 18:10:02.741]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664236','2014-05-28 18:00:16','2014-05-28 18:08:18','record')
+[2014-05-28 18:19:33.823]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664622
+[2014-05-28 18:19:33.826]	[dfirplc.process.ProcessDB882] SelectDB882 :664622 tekercs elkészült. 1185 record rögzítve
+[2014-05-28 18:19:33.836]	[dfirplc.process.ProcessDB882] SelectDB882 :664622 bytebuffer mérete: 210930
+[2014-05-28 18:19:33.850]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664622','2014-05-28 18:13:39','2014-05-28 18:17:07','record')
+[2014-05-28 18:39:54.012]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664623
+[2014-05-28 18:39:54.013]	[dfirplc.process.ProcessDB882] SelectDB882 :664623 tekercs elkészült. 1402 record rögzítve
+[2014-05-28 18:39:54.034]	[dfirplc.process.ProcessDB882] SelectDB882 :664623 bytebuffer mérete: 249556
+[2014-05-28 18:39:54.053]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664623','2014-05-28 18:32:52','2014-05-28 18:36:58','record')
+[2014-05-28 18:51:16.142]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664624
+[2014-05-28 18:51:16.143]	[dfirplc.process.ProcessDB882] SelectDB882 :664624 tekercs elkészült. 1701 record rögzítve
+[2014-05-28 18:51:16.166]	[dfirplc.process.ProcessDB882] SelectDB882 :664624 bytebuffer mérete: 302778
+[2014-05-28 18:51:16.188]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664624','2014-05-28 18:43:20','2014-05-28 18:48:19','record')
+[2014-05-28 19:00:42.299]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664626
+[2014-05-28 19:00:42.299]	[dfirplc.process.ProcessDB882] SelectDB882 :664626 tekercs elkészült. 1468 record rögzítve
+[2014-05-28 19:00:42.321]	[dfirplc.process.ProcessDB882] SelectDB882 :664626 bytebuffer mérete: 261304
+[2014-05-28 19:00:42.342]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664626','2014-05-28 18:53:38','2014-05-28 18:57:56','record')
+[2014-05-28 19:10:16.420]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663808
+[2014-05-28 19:10:16.421]	[dfirplc.process.ProcessDB882] SelectDB882 :663808 tekercs elkészült. 1014 record rögzítve
+[2014-05-28 19:10:16.435]	[dfirplc.process.ProcessDB882] SelectDB882 :663808 bytebuffer mérete: 180492
+[2014-05-28 19:10:16.452]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663808','2014-05-28 19:03:40','2014-05-28 19:06:38','record')
+[2014-05-28 19:19:11.520]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663809
+[2014-05-28 19:19:11.521]	[dfirplc.process.ProcessDB882] SelectDB882 :663809 tekercs elkészült. 936 record rögzítve
+[2014-05-28 19:19:11.535]	[dfirplc.process.ProcessDB882] SelectDB882 :663809 bytebuffer mérete: 166608
+[2014-05-28 19:19:11.548]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663809','2014-05-28 19:13:14','2014-05-28 19:15:59','record')
+[2014-05-28 19:29:07.623]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664611
+[2014-05-28 19:29:07.624]	[dfirplc.process.ProcessDB882] SelectDB882 :664611 tekercs elkészült. 1754 record rögzítve
+[2014-05-28 19:29:07.659]	[dfirplc.process.ProcessDB882] SelectDB882 :664611 bytebuffer mérete: 312212
+[2014-05-28 19:29:07.678]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664611','2014-05-28 19:21:57','2014-05-28 19:27:07','record')
+[2014-05-28 19:40:28.762]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663810
+[2014-05-28 19:40:28.763]	[dfirplc.process.ProcessDB882] SelectDB882 :663810 tekercs elkészült. 945 record rögzítve
+[2014-05-28 19:40:28.782]	[dfirplc.process.ProcessDB882] SelectDB882 :663810 bytebuffer mérete: 168210
+[2014-05-28 19:40:28.803]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663810','2014-05-28 19:34:38','2014-05-28 19:37:24','record')
+[2014-05-28 19:54:32.913]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663578
+[2014-05-28 19:54:32.913]	[dfirplc.process.ProcessDB882] SelectDB882 :663578 tekercs elkészült. 2438 record rögzítve
+[2014-05-28 19:54:32.941]	[dfirplc.process.ProcessDB882] SelectDB882 :663578 bytebuffer mérete: 433964
+[2014-05-28 19:54:32.968]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663578','2014-05-28 19:43:44','2014-05-28 19:52:38','record')
+[2014-05-28 20:05:49.055]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663431
+[2014-05-28 20:05:49.056]	[dfirplc.process.ProcessDB882] SelectDB882 :663431 tekercs elkészült. 1915 record rögzítve
+[2014-05-28 20:05:49.082]	[dfirplc.process.ProcessDB882] SelectDB882 :663431 bytebuffer mérete: 340870
+[2014-05-28 20:05:49.106]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663431','2014-05-28 19:57:49','2014-05-28 20:03:26','record')
+[2014-05-28 20:13:15.168]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 644420
+[2014-05-28 20:13:15.169]	[dfirplc.process.ProcessDB882] SelectDB882 :644420 tekercs elkészült. 757 record rögzítve
+[2014-05-28 20:13:15.181]	[dfirplc.process.ProcessDB882] SelectDB882 :644420 bytebuffer mérete: 134746
+[2014-05-28 20:13:15.193]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('644420','2014-05-28 20:09:05','2014-05-28 20:11:19','record')
+[2014-05-28 20:27:03.301]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663432
+[2014-05-28 20:27:03.301]	[dfirplc.process.ProcessDB882] SelectDB882 :663432 tekercs elkészült. 2163 record rögzítve
+[2014-05-28 20:27:03.329]	[dfirplc.process.ProcessDB882] SelectDB882 :663432 bytebuffer mérete: 385014
+[2014-05-28 20:27:03.356]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663432','2014-05-28 20:19:04','2014-05-28 20:25:22','record')
+[2014-05-28 20:42:49.482]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663433
+[2014-05-28 20:42:49.483]	[dfirplc.process.ProcessDB882] SelectDB882 :663433 tekercs elkészült. 3393 record rögzítve
+[2014-05-28 20:42:49.523]	[dfirplc.process.ProcessDB882] SelectDB882 :663433 bytebuffer mérete: 603954
+[2014-05-28 20:42:49.557]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663433','2014-05-28 20:31:11','2014-05-28 20:41:04','record')
+[2014-05-28 21:00:16.710]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663804
+[2014-05-28 21:00:16.711]	[dfirplc.process.ProcessDB882] SelectDB882 :663804 tekercs elkészült. 3585 record rögzítve
+[2014-05-28 21:00:16.763]	[dfirplc.process.ProcessDB882] SelectDB882 :663804 bytebuffer mérete: 638130
+[2014-05-28 21:00:16.797]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663804','2014-05-28 20:47:24','2014-05-28 20:57:51','record')
+[2014-05-28 21:16:09.922]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663434
+[2014-05-28 21:16:09.923]	[dfirplc.process.ProcessDB882] SelectDB882 :663434 tekercs elkészült. 2308 record rögzítve
+[2014-05-28 21:16:09.951]	[dfirplc.process.ProcessDB882] SelectDB882 :663434 bytebuffer mérete: 410824
+[2014-05-28 21:16:09.979]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663434','2014-05-28 21:07:07','2014-05-28 21:14:31','record')
+[2014-05-28 21:45:23.328]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663435
+[2014-05-28 21:45:23.329]	[dfirplc.process.ProcessDB882] SelectDB882 :663435 tekercs elkészült. 3847 record rögzítve
+[2014-05-28 21:45:23.373]	[dfirplc.process.ProcessDB882] SelectDB882 :663435 bytebuffer mérete: 684766
+[2014-05-28 21:45:23.410]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663435','2014-05-28 21:32:04','2014-05-28 21:43:17','record')
+[2014-05-28 21:56:53.501]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664651
+[2014-05-28 21:56:53.501]	[dfirplc.process.ProcessDB882] SelectDB882 :664651 tekercs elkészült. 1179 record rögzítve
+[2014-05-28 21:56:53.516]	[dfirplc.process.ProcessDB882] SelectDB882 :664651 bytebuffer mérete: 209862
+[2014-05-28 21:56:53.530]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664651','2014-05-28 21:51:37','2014-05-28 21:55:04','record')
+[2014-05-28 22:07:43.618]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663594
+[2014-05-28 22:07:43.621]	[dfirplc.process.ProcessDB882] SelectDB882 :663594 tekercs elkészült. 1680 record rögzítve
+[2014-05-28 22:07:43.643]	[dfirplc.process.ProcessDB882] SelectDB882 :663594 bytebuffer mérete: 299040
+[2014-05-28 22:07:43.664]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663594','2014-05-28 22:00:39','2014-05-28 22:05:35','record')
+[2014-05-28 22:16:25.732]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664650
+[2014-05-28 22:16:25.733]	[dfirplc.process.ProcessDB882] SelectDB882 :664650 tekercs elkészült. 1093 record rögzítve
+[2014-05-28 22:16:25.751]	[dfirplc.process.ProcessDB882] SelectDB882 :664650 bytebuffer mérete: 194554
+[2014-05-28 22:16:25.769]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664650','2014-05-28 22:11:12','2014-05-28 22:14:24','record')
+[2014-05-28 22:29:26.881]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664665
+[2014-05-28 22:29:26.882]	[dfirplc.process.ProcessDB882] SelectDB882 :664665 tekercs elkészült. 941 record rögzítve
+[2014-05-28 22:29:26.901]	[dfirplc.process.ProcessDB882] SelectDB882 :664665 bytebuffer mérete: 167498
+[2014-05-28 22:29:26.918]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664665','2014-05-28 22:23:36','2014-05-28 22:26:22','record')
+[2014-05-28 22:38:43.991]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663594
+[2014-05-28 22:38:43.992]	[dfirplc.process.ProcessDB882] SelectDB882 :663594 tekercs elkészült. 1572 record rögzítve
+[2014-05-28 22:38:44.018]	[dfirplc.process.ProcessDB882] SelectDB882 :663594 bytebuffer mérete: 279816
+[2014-05-28 22:38:44.043]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663594','2014-05-28 22:31:56','2014-05-28 22:36:32','record')
+[2014-05-28 22:46:44.108]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664649
+[2014-05-28 22:46:44.108]	[dfirplc.process.ProcessDB882] SelectDB882 :664649 tekercs elkészült. 1154 record rögzítve
+[2014-05-28 22:46:44.128]	[dfirplc.process.ProcessDB882] SelectDB882 :664649 bytebuffer mérete: 205412
+[2014-05-28 22:46:44.149]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664649','2014-05-28 22:41:38','2014-05-28 22:45:02','record')
+[2014-05-28 22:59:12.251]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664666
+[2014-05-28 22:59:12.254]	[dfirplc.process.ProcessDB882] SelectDB882 :664666 tekercs elkészült. 1064 record rögzítve
+[2014-05-28 22:59:12.270]	[dfirplc.process.ProcessDB882] SelectDB882 :664666 bytebuffer mérete: 189392
+[2014-05-28 22:59:12.287]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664666','2014-05-28 22:52:40','2014-05-28 22:55:46','record')
+[2014-05-28 23:09:16.366]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664628
+[2014-05-28 23:09:16.366]	[dfirplc.process.ProcessDB882] SelectDB882 :664628 tekercs elkészült. 1026 record rögzítve
+[2014-05-28 23:09:16.387]	[dfirplc.process.ProcessDB882] SelectDB882 :664628 bytebuffer mérete: 182628
+[2014-05-28 23:09:16.404]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664628','2014-05-28 23:02:09','2014-05-28 23:05:09','record')
+[2014-05-28 23:17:22.469]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 661151
+[2014-05-28 23:17:22.470]	[dfirplc.process.ProcessDB882] SelectDB882 :661151 tekercs elkészült. 936 record rögzítve
+[2014-05-28 23:17:22.483]	[dfirplc.process.ProcessDB882] SelectDB882 :661151 bytebuffer mérete: 166608
+[2014-05-28 23:17:22.496]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('661151','2014-05-28 23:12:50','2014-05-28 23:15:35','record')
+[2014-05-28 23:26:45.569]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 663508
+[2014-05-28 23:26:45.570]	[dfirplc.process.ProcessDB882] SelectDB882 :663508 tekercs elkészült. 1253 record rögzítve
+[2014-05-28 23:26:45.592]	[dfirplc.process.ProcessDB882] SelectDB882 :663508 bytebuffer mérete: 223034
+[2014-05-28 23:26:45.610]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('663508','2014-05-28 23:21:15','2014-05-28 23:24:56','record')
+[2014-05-28 23:40:18.712]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 6622530100
+[2014-05-28 23:40:18.712]	[dfirplc.process.ProcessDB882] SelectDB882 :6622530100 tekercs elkészült. 2319 record rögzítve
+[2014-05-28 23:40:18.741]	[dfirplc.process.ProcessDB882] SelectDB882 :6622530100 bytebuffer mérete: 412782
+[2014-05-28 23:40:18.768]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('6622530100','2014-05-28 23:31:44','2014-05-28 23:38:29','record')
+[2014-05-28 23:53:41.912]	[dfirplc.process.ProcessDB883] SelectDB883 : Felcsévélő tekercslevétel: 664784
+[2014-05-28 23:53:41.916]	[dfirplc.process.ProcessDB882] SelectDB882 :664784 tekercs elkészült. 2309 record rögzítve
+[2014-05-28 23:53:41.948]	[dfirplc.process.ProcessDB882] SelectDB882 :664784 bytebuffer mérete: 411002
+[2014-05-28 23:53:41.973]	[dfirplc.sql.SQL] INSERT INTO REGF(htek_id, start_time, stop_time, record)VALUES('664784','2014-05-28 23:45:16','2014-05-28 23:52:00','record')

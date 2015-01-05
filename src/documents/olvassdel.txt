@@ -1,0 +1,33 @@
+Az SQl adatbázis méretét a "Exceeds Max Allowed Packet for MySQL" hiba miatt
+meg kell növelni. 
+
+https://confluence.atlassian.com/display/CONFKB/Exceeds+Max+Allowed+Packet+for+MySQL
+
+Cause:
+The MySQL packet size setting by default is not big enough to allow most 
+add-on's to install in the Confluence database. Plugin data, attachments, 
+and large page bodies can often exceed the default limit of 1 Mb. For 
+more information see here: http://dev.mysql.com/doc/refman/5.6/en/packet-too-large.html
+
+Resolution:
+
+If you are unable to stop your database, you can alternatively set the value of the max allowed packet parameter dynamically. To do so:
+Log in as a root user.
+You'll need to set the value as an integer, rather than '34M'. 34M is equivalent to 34*1024*1024, or 35651584.
+mysql> SET GLOBAL max_allowed_packet=35651584;
+To check that this has been applied:
+Relogin to your mysql client.
+mysql> SELECT @@max_allowed_packet;
+Restart your Confluence instance.
+You will still need to update your /etc/my.cnf file as described in the method above to make the change persistent.
+
+Set the MySQL packet size to a larger value (34M is the biggest known Confluence add-on - Gliffy) and restart MySQL Server. If you find this isn't large enough based on the size mentioned in the log, then you can set it larger than 34M, but 34M should be large enough to cover most cases.
+
+shell> mysqld --max_allowed_packet=34M
+
+
+Alternatively, you can do this on your MySQL server's settings by editing MySQL's my.cnf file (often named my.ini on Windows operating systems). Locate the [mysqld]section in the file, and add/modify the following parameters:
+[mysqld]
+...
+max_allowed_packet = 34M
+...
