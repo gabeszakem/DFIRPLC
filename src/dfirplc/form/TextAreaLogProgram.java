@@ -9,9 +9,11 @@ import java.io.PrintStream;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.text.BadLocationException;
+import java.awt.Toolkit;
 
 public class TextAreaLogProgram extends JFrame {
 
@@ -22,16 +24,22 @@ public class TextAreaLogProgram extends JFrame {
 
     @SuppressWarnings("FieldMayBeFinal")
     private JButton buttonClear = new JButton("Clear");
+    
+    private JLabel label=new JLabel("teszt");
 
     private PrintStream standardOut;
 
     public TextAreaLogProgram() {
-        super("Log");
-       
+        super("Esemény Napló");
+        setIconImage(Toolkit.getDefaultToolkit().getImage(TextAreaLogProgram.class.getResource("/dfirplc/images/testimonials.png")));
 
         textArea = new JTextArea(50, 10);
         textArea.setEditable(false);
-        PrintStream printStream = new PrintStream(new CustomOutputStream(textArea));
+        
+        label.setSize(50, 10);
+        label.setEnabled(false);
+        
+        PrintStream printStream = new PrintStream(new CustomOutputStream(textArea,label));
 
         // keeps reference of standard output stream
         standardOut = System.out;
@@ -50,10 +58,13 @@ public class TextAreaLogProgram extends JFrame {
 
         constraints.gridx = 1;
         add(buttonClear, constraints);
+        
+        constraints.gridx=2;
+        add(label,constraints);
 
         constraints.gridx = 0;
         constraints.gridy = 1;
-        constraints.gridwidth = 2;
+        constraints.gridwidth = 3;
         constraints.fill = GridBagConstraints.BOTH;
         constraints.weightx = 1.0;
         constraints.weighty = 1.0;
@@ -64,14 +75,17 @@ public class TextAreaLogProgram extends JFrame {
         buttonClear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                // clears the text area
+                //clears the text area
+
                 try {
                     textArea.getDocument().remove(0,
                             textArea.getDocument().getLength());
                     standardOut.println("Text area cleared");
+                    label.setText(Integer.toString(textArea.getDocument().getDefaultRootElement().getElementCount()-1));
                 } catch (BadLocationException ex) {
                     ex.printStackTrace();
                 }
+
             }
         });
 
@@ -82,6 +96,7 @@ public class TextAreaLogProgram extends JFrame {
     }
 
     @Override
+
     public void dispose() {
         super.dispose();
     }

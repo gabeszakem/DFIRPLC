@@ -97,6 +97,8 @@ public class TCPConnectionServer extends Thread {
             System.err.println(new Date() + " : " + ex.getMessage());
             MainApp.debug.printDebugMsg(db.getClass().getName(), TCPConnectionServer.class.getName(), "(error) TCPConnectionServer :", ex);
         }
+        this.ProcessSelect = new ProcessSelectDB();
+        this.temp=null;
     }
 
     @Override
@@ -237,7 +239,7 @@ public class TCPConnectionServer extends Thread {
     /**
      * Mezők feltöltése a db-ből kapott adatokkal
      */
-    private synchronized void field(byte[] receiveTelegram) {
+    private void field(byte[] receiveTelegram) {
         /**
          * A db.-ben található mezők.
          */
@@ -328,7 +330,7 @@ public class TCPConnectionServer extends Thread {
             /**
              * Üzenetek feldolgozása
              */
-            ProcessSelect.select(this);
+            this.ProcessSelect.select(this);
         } catch (IllegalArgumentException | IllegalAccessException | IndexOutOfBoundsException ex) {
             /**
              * Hiba esetén üzenet írása a debug.log fájlba.

@@ -8,6 +8,7 @@ package dfirplc.form;
 import dfirplc.MainApp;
 import dfirplc.db.DB882;
 import dfirplc.net.tcp.TCPConnectionServer;
+import java.awt.Toolkit;
 import java.util.Date;
 
 /**
@@ -21,6 +22,7 @@ public class DressFrame extends javax.swing.JFrame {
      */
     public DressFrame() {
         initComponents();
+      //  setIconImage(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/dfirplc/images/testimonials.png")));
     }
     
     /**
@@ -48,7 +50,9 @@ public class DressFrame extends javax.swing.JFrame {
         machinePanel1 = new dfirplc.form.MachinePanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Dresszírozó panel");
         setBackground(new java.awt.Color(255, 255, 255));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(DressFrame.class.getResource("/dfirplc/images/testimonials.png")));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));

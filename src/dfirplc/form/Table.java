@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author gabesz
  */
-public class Table extends javax.swing.JPanel {
+public class Table extends javax.swing.JPanel{
     
     /**
      * Creates new form Table
@@ -50,6 +50,7 @@ public class Table extends javax.swing.JPanel {
                 MainApp.debug.printDebugMsg(null,Table.class.getName(),"(error) Table :",ex);
             }
         }
+         
     }
 
     

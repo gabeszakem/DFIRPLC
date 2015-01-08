@@ -32,7 +32,7 @@ public class UDPConnectionServer extends Thread {
     private static long timestamp = System.currentTimeMillis();
     private static boolean run = false;
     private static int count = 0;
-    private static final int MAXCOUNT = 3;
+    private static final int MAXCOUNT = 30;
 
     /**
      *
@@ -93,20 +93,26 @@ public class UDPConnectionServer extends Thread {
                             }
                             try {
                                 if (previousLifeSignal != db887.LifeSignal) {
-                                    if(count<0){
-                                        MainApp.debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(error) Thread(\"Timer(Centralograf message)\") :", "previousLifeSignal != db887.LifeSignal"
-                                                + " A PLC-től nem érkezett életjel. UDP kapcsolat blokkolva. count: " + count +
-                                                " LifeSignal: "+db887.LifeSignal +"LifeSignalError: " +db887.LifeSignalError) ;
+                                    if (count < 0) {
+                                        if (count < MAXCOUNT) {
+                                            MainApp.debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(error) Thread(\"Timer(Centralograf message)\") :", "previousLifeSignal != db887.LifeSignal"
+                                                    + " A PLC-től nem érkezett életjel. UDP kapcsolat blokkolva. count: " + count
+                                                    + " LifeSignal: " + db887.LifeSignal + "LifeSignalError: " + db887.LifeSignalError);
+                                        } else {
+                                            MainApp.debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(warning) Thread(\"Timer(Centralograf message)\") :", "previousLifeSignal != db887.LifeSignal"
+                                                    + " A PLC-től nem érkezett életjel. UDP kapcsolat blokkolva. count: " + count
+                                                    + " LifeSignal: " + db887.LifeSignal + "LifeSignalError: " + db887.LifeSignalError);
+                                        }
                                     }
                                     udp.sendTelegram(FillDataToBuffer.load(object, bufferSize));
                                     count = 0;
                                 } else {
-
-                                    MainApp.debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(warning) Thread(\"Timer(Centralograf message)\") :", "previousLifeSignal != db887.LifeSignal"
-                                            + " A PLC-től nem érkezett életjel. count: " + count );
+                                    if (count == 0) {
+                                        MainApp.debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(warning) Thread(\"Timer(Centralograf message)\") :", "previousLifeSignal != db887.LifeSignal"
+                                                + " A PLC-től nem érkezett életjel.  LifeSignal: " + db887.LifeSignal + "LifeSignalError: " + db887.LifeSignalError);
+                                    }
                                     if (count < MAXCOUNT) {
                                         udp.sendTelegram(FillDataToBuffer.load(object, bufferSize));
-
                                     }
                                     count++;
                                 }

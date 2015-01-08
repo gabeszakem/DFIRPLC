@@ -4,6 +4,7 @@
  */
 package dfirplc.centralograf;
 
+import dfirplc.MainApp;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;

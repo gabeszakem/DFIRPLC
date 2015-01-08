@@ -26,39 +26,33 @@ import java.net.InetAddress;
 public class MainApp {
 
     /**
-     * Buffer méret. 
-     * (BUFFERSIZE = 1024)
+     * Buffer méret. (BUFFERSIZE = 1024)
      */
     private static final Integer BUFFERSIZE = 1024;
     /**
-     * PLC IP címe.
-     * (IPADDRESS = "192.168.210.11")
+     * PLC IP címe. (IPADDRESS = "192.168.210.11")
      */
     private static final String IPADDRESS = "192.168.210.11";
     /**
-     * Frame engedélyezése vagy tiltása.
-     * (FRAMEISENABLED = true)
+     * Frame engedélyezése vagy tiltása. (FRAMEISENABLED = true)
      */
     public static final boolean FRAMEISENABLED = true;
 
     /**
-     * DressPanel engedélyezése vagy tiltása.
-     * (DRESSPANELISENABLED = true)
+     * DressPanel engedélyezése vagy tiltása. (DRESSPANELISENABLED = true)
      */
     public static final boolean DRESSPANELISENABLED = true;
     /**
-     * Loggolás textareában engedélyezése vagy tiltása.
-     * (LOGPANELISENABLED = true)
+     * Loggolás textareában engedélyezése vagy tiltása. (LOGPANELISENABLED =
+     * true)
      */
     public static final boolean LOGPANELISENABLED = true;
     /**
-     * Telegram küldése engedélyezett vagy sem.
-     * (SENDTELEGRAMISENABLE = true)
+     * Telegram küldése engedélyezett vagy sem. (SENDTELEGRAMISENABLE = true)
      */
     public static final boolean SENDTELEGRAMISENABLE = true;
     /**
-     * Az osztályok printelésének engedélyezése.
-     * (CLASSTOSTRINGENABLE = false)
+     * Az osztályok printelésének engedélyezése. (CLASSTOSTRINGENABLE = false)
      */
     public static final boolean CLASSTOSTRINGENABLE = false;
     /**
@@ -69,13 +63,11 @@ public class MainApp {
 
     /**
      * Ha engedélyezzük , akkor udp kapcsolaton keresztül küldi a berendezés
-     * állapotát a centralográf terminálnak.
-     * (CENTRALOGGRAFMESSAGEENABLE = true)
+     * állapotát a centralográf terminálnak. (CENTRALOGGRAFMESSAGEENABLE = true)
      */
     public static final boolean CENTRALOGGRAFMESSAGEENABLE = true;
     /**
-     * A Centrál terminál ip címe.
-     * (CENTRALOGGRAFIPADDRESS = "10.1.39.154")
+     * A Centrál terminál ip címe. (CENTRALOGGRAFIPADDRESS = "10.1.39.154")
      */
     public static final String CENTRALOGGRAFIPADDRESS = "10.1.39.154";
     /**
@@ -96,8 +88,7 @@ public class MainApp {
      */
     public static boolean CoilRemoveFromTensionReal = false;
     /**
-     * Szúrásterv leküldés engedélyezése.
-     * (PASSSCHEDULEENABLE = true)
+     * Szúrásterv leküldés engedélyezése. (PASSSCHEDULEENABLE = true)
      */
     public static final boolean PASSSCHEDULEENABLE = false;
     /**
@@ -131,24 +122,27 @@ public class MainApp {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        
-        
-        if (LOGPANELISENABLED){
-            try{
+
+        debug = new Debug(true, 1);
+
+        MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Program elidítva...");
+        if (LOGPANELISENABLED) {
+            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Logpanel engedélyezve...");
+            try {
                 /**
                  * Új logPanel létrehozása.
                  */
-                textAreaLog=new TextAreaLogProgram();
-                //textAreaLog.setVisible(true);
-                
+                textAreaLog = new TextAreaLogProgram();
+
             } catch (Exception ex) {
                 System.out.println("LogPanel inditása nem sikerült");
+                MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "(error) Logpanel indítása nem sikerült...", ex);
             }
+        } else {
+            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Logpanel letiltva...");
         }
-        
-        debug = new Debug(true, 1);
-        
         System.out.println("PLC IP címe: " + IPADDRESS);
+        MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "PLC IP címe: " + IPADDRESS);
         /**
          * PLC IP Címe InetAddress formátumban.
          */
@@ -215,6 +209,7 @@ public class MainApp {
             /**
              * Új Frame létrehozása.
              */
+            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Frame engedélyezve...");
             try {
                 frame = new Frame_();
                 /**
@@ -238,7 +233,7 @@ public class MainApp {
                                     frame.refreshPanels(servers);
                                 }
                             } catch (Exception ex) {
-
+                                MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Frame thread hiba...", ex);
                             }
                         }
                     }
@@ -250,14 +245,18 @@ public class MainApp {
                  */
                 //frame.setVisible(true);
                 System.out.println("Frame engedélyezve...");
+                MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Frame elindítva...");
 
             } catch (Exception ex) {
                 System.out.println("Frame inditása nem sikerült");
+                MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Frame indítása nem sikerült...");
             }
+        } else {
+            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Frame letíltva...");
         }
 
         if (DRESSPANELISENABLED) {
-
+            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel engedélyezve...");
             try {
                 /**
                  * Új Frame létrehozása.
@@ -281,35 +280,53 @@ public class MainApp {
                                     dress.refreshPanels();
                                 }
                             } catch (Exception ex) {
-
+                                MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel timer hiba...", ex);
                             }
                         }
                     }
                 };
                 timer2.start();
                 System.out.println("DressPanel engedélyezve...");
+                MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel elindítva...");
             } catch (Exception ex) {
                 System.out.println("DressPanel inditása nem sikerült");
+                MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel inditása nem sikerült...");
             }
+        } else {
+            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel letíltva...");
         }
-       
+
         /**
          * SQL ADATBázis kapcsolat létrehozása.
          */
         sql = new SQL();
         System.out.println("SQL kapcsolat létrehozva");
+        MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "SQL kapcsolat létrehozva...");
+
+        /**
+         * tray (tálca) elindítása...
+         */
         try {
+            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Tray inditása...");
             Tray tray = new Tray();
+            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Tray elindítva");
         } catch (Exception ex) {
             System.out.println("Tray inditása nem sikerült");
+            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Tray inditása nem sikerült...");
         }
         if (CENTRALOGGRAFMESSAGEENABLE) {
+            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Centralográf üzenet engedélyezve...");
             int centralografPort = 2100;
             int bufferSize = 2048;
             InetAddress centralografIPAddress = InetAddress.getByName(CENTRALOGGRAFIPADDRESS);
             udpCentralograf = new UDPConnectionServer(centralografMessage, centralografPort, bufferSize, centralografIPAddress);
             udpCentralograf.createPanels(servers);
             udpCentralograf.start();
+            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Centralográf üzenet létrehozva UDP-n : " + CENTRALOGGRAFIPADDRESS
+                    + ":" + centralografPort);
+
+        } else {
+            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Centralográf üzenet letiltva...");
         }
     }
 }
