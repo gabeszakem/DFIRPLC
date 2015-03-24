@@ -52,6 +52,9 @@ public class ProcessDB883 {
                 }
             }
 
+        }else{
+            MainApp.debug.printDebugMsg(null, ProcessDB883.class.getName(), "(warning)SectDB883 : Felcsévélő tekercslevétel telegramm azonósítója megegyezik "+
+                    "removeTRTelId: "+dB883.RemoveTRTelId+" coilId: "+dB883.CoilId.getMyString()) ;
         }
         try {
             /**

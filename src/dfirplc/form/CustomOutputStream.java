@@ -19,9 +19,10 @@ public class CustomOutputStream extends OutputStream {
 
     @SuppressWarnings("FieldMayBeFinal")
     private JTextArea textArea;
+    @SuppressWarnings("FieldMayBeFinal")
     private JLabel label;
     private int pointer = 0;
-    private final int MAXLINE = 500;
+    private final int MAXLINE = 1500;
     private boolean correction = false;
 
     public CustomOutputStream(JTextArea textArea, JLabel label) {

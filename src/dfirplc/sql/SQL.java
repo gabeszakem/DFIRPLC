@@ -97,16 +97,16 @@ public class SQL {
                 st.setString(1, "regf");
                 st.setString(2, "0");
                 st.setString(3, date);
-                
+
                 String queryMess = "INSERT INTO semaphore (table_name, table_status, time_stamp) VALUES ('regf','0','" + date + "')";
                 System.out.println(new java.util.Date().toString() + " - " + queryMess);
                 MainApp.debug.printDebugMsg(null, SQL.class.getName(), queryMess);
-                
-                 st.executeUpdate();
+
+                st.executeUpdate();
             }
 
-           // System.out.println(new java.util.Date().toString() + " - " + query);
-           // MainApp.debug.printDebugMsg(null, SQL.class.getName(), query);
+            // System.out.println(new java.util.Date().toString() + " - " + query);
+            // MainApp.debug.printDebugMsg(null, SQL.class.getName(), query);
         } catch (SQLException ex) {
             MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
             ex.printStackTrace(System.err);
@@ -197,6 +197,7 @@ public class SQL {
                 System.out.println(new java.util.Date().toString() + " - " + "SELECT * FROM `dfir`.`szurasterv` WHERE 1 order by pssschtelid limit 1");
                 MainApp.debug.printDebugMsg(null, SQL.class.getName(), "SELECT * FROM `dfir`.`szurasterv` WHERE 1 order by pssschtelid limit 1");
                 try {
+
                     pasSchID = rs.getInt("pssschtelid");
                     db.DwaPssSchTelId = (short) (pasSchID % 1000);
                     db.CoilId.setMyString(rs.getString("coilid"));
@@ -232,34 +233,65 @@ public class SQL {
                         MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
                         e.printStackTrace(System.err);
                     }
-                    /*
-                     try {
-                     db.DwaExitCoilsNo = rs.getShort("exitcoilsno");
-                     } catch (Exception e) {
-                     MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
-                     e.printStackTrace(System.err);
-                     }*/
+
+                    try {
+                        db.DwaExitCoilsNo = rs.getShort("exitcoilsno");
+                    } catch (Exception e) {
+                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                        e.printStackTrace(System.err);
+                    }
                     try {
                         db.DwaLength = (db.DwaWeight / ((db.DwaWidth / 1000) * (db.DwaThickness / 1000)) / 7860);
                     } catch (Exception e) {
                         MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
                         e.printStackTrace(System.err);
                     }
-                    /*
-                     try {
-                     db.DwaProcessType = rs.getShort("processtype");
-                     } catch (Exception e) {
-                     MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
-                     e.printStackTrace(System.err);
-                     }
-                     */
-                    /*
-                     try {
-                     db.DwaElongation = rs.getFloat("elongation");
-                     } catch (Exception e) {
-                     MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
-                     e.printStackTrace(System.err);
-                     }*/
+
+                    try {
+                        db.DwaProcessType = rs.getShort("processtype");
+                    } catch (Exception e) {
+                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                        e.printStackTrace(System.err);
+                    }
+
+                    try {
+                        db.DwaElongation = rs.getFloat("elongation");
+                    } catch (Exception e) {
+                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                        e.printStackTrace(System.err);
+                    }
+
+                    try {
+                        db.DwaElongLowLim = rs.getFloat("elonglowlim");
+                    } catch (Exception e) {
+                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                        e.printStackTrace(System.err);
+                    }
+
+                    try {
+                        db.DwaElongUpLim = rs.getFloat("elonguplim");
+                    } catch (Exception e) {
+                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                        e.printStackTrace(System.err);
+                    }
+
+                    try {
+                        if (db.DwaExitCoilsNo == 1) {
+                            db.DwaExitCoil1Length = 0;
+                            db.DwaExitCoil2Length = 0;
+                        } else if (db.DwaExitCoilsNo == 2) {
+                            db.DwaExitCoil1Length = db.DwaLength / 2;
+                            db.DwaExitCoil2Length = db.DwaLength / 2;
+                        } else if (db.DwaExitCoilsNo == 3) {
+                            db.DwaExitCoil1Length = db.DwaLength / 3;
+                            db.DwaExitCoil2Length = db.DwaLength / 3;
+                        }
+
+                    } catch (Exception e) {
+                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                        e.printStackTrace(System.err);
+                    }
+
                 } catch (Exception ex) {
                     MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
                     ex.printStackTrace(System.err);
@@ -308,7 +340,7 @@ public class SQL {
             SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String date = sdf.format(new java.util.Date());
             try {
-                query = ("SELECT * FROM `dfir`.`szurasterv` WHERE `pssschtelid` = " + pasSchID);
+                query = ("SELECT * FROM `dfir`.`szurasterv_log` WHERE `pssschtelid` = " + pasSchID);
 
                 st = con.prepareStatement(query);
                 rs = st.executeQuery();
@@ -325,7 +357,7 @@ public class SQL {
                 date = sdf.format(new java.util.Date());
             }
             try {
-                query = "UPDATE szurasterv SET ts_feldolgozas='" + date
+                query = "UPDATE `szurasterv_log` SET `ts_feldolgozas`='" + date
                         + "' WHERE `pssschtelid`=" + pasSchID;
 
                 System.out.println(new java.util.Date().toString() + " - " + query);
@@ -334,7 +366,7 @@ public class SQL {
 
                 MainApp.debug.printDebugMsg(null, SQL.class.getName(), query);
             } catch (Exception ex) {
-                System.out.println(new java.util.Date().toString() + " - ");
+                System.out.println(new java.util.Date().toString() + " - " + ex.toString());
                 MainApp.debug.printDebugMsg(null, SQL.class.getName(), "SQL error:" + query, ex);
             }
         } catch (SQLException ex) {
@@ -383,7 +415,7 @@ public class SQL {
                     + "`basicsprayamount`,`tensionporesbr`,`tensionesbrstd`,`tensionstdxsbr`,`tensionxsbrt`,"
                     + "`corediameter`,`elonglowlim`,`elonguplim`,`ts_kuldes`) "
                     + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-            System.out.println(query);
+            System.out.println(new java.util.Date().toString() + " - " + query);
             st = con.prepareStatement(query);
             st.setInt(1, pasSchID);
             st.setString(2, db.CoilId.getMyString());

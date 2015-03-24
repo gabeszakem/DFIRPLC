@@ -60,8 +60,9 @@ public class DB885 {
     public float DwaExitCoil2Length = 0.0f;
     /**
      * DWA beállítási adat: folyamat típusa
+     * 0:száraz, 1:nedves
      */
-    public short DwaProcessType = 0;
+    public short DwaProcessType = 1;
     /**
      * DWA beállítási adat: nyúlás [%]
      */

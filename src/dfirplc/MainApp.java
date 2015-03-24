@@ -90,7 +90,7 @@ public class MainApp {
     /**
      * Szúrásterv leküldés engedélyezése. (PASSSCHEDULEENABLE = true)
      */
-    public static final boolean PASSSCHEDULEENABLE = false;
+    public static final boolean PASSSCHEDULEENABLE = true;
     /**
      * Difirtől jövő adatok táblázatban.
      */

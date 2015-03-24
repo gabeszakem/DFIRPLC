@@ -1,0 +1,102 @@
+[NPort Configuration File]
+CheckCode=cfgIA
+
+[Basic Information (not changeable)]
+APID=0x80005201
+HWID=0x52AA
+Serial No=1328
+MAC Address=00:90:E8:43:33:0A
+Firmware version=0x1010000
+
+[Basic Settings]
+Server Name=NPIA5250AI_1328
+Time Zone=0
+Time Zone index=23
+Date_Year=115
+Date_Month=1
+Date_Day=13
+Time_Hour=9
+Time_Minute=37
+Time_Second=46
+Time_Milliseconds=0
+Time Server=
+Console Enabled=3
+
+[Network Settings]
+IP Address=172.24.2.138
+Netmask=255.255.255.192
+Gateway=
+IP Configuration=0
+DNS Server 1=
+DNS Server 2=
+
+[SNMP]
+Enable SNMP=0
+Community=public
+Location=
+Contact=
+Trap=
+
+[Mail]
+Mail Server=
+Mail Server Login=0
+User Name=
+Password=
+From Address=NPIA5250AI_1328@NPIA5250AI
+To Address1=
+To Address2=
+To Address3=
+To Address4=
+
+[Accessible IP List]
+Enabled=0
+Rule1=0,,
+Rule2=0,,
+Rule3=0,,
+Rule4=0,,
+Rule5=0,,
+Rule6=0,,
+Rule7=0,,
+Rule8=0,,
+Rule9=0,,
+Rule10=0,,
+Rule11=0,,
+Rule12=0,,
+Rule13=0,,
+Rule14=0,,
+Rule15=0,,
+Rule16=0,,
+
+[Serial]
+Port1=9600,3,0,1,0,
+Port2=115200,3,1,1,0,
+
+[Operating Mode]
+Port1=10
+Port2=7
+
+[Operating Mode Option 2]
+Port1=16,0x00,0x00,0,0
+Port2=16,0x00,0x00,0,0
+
+[Operating Mode Option 1]
+Port1=1000,0,1,2100,966,0,0
+
+[Auto Warning]
+Mail=0x0
+Trap=0x0
+Relay=0x0
+
+[Port Auto Warning]
+Port1=0x00,0x00,0x00
+Port2=0x00,0x00,0x00
+
+[IP Address Report]
+Server=
+Port=4002
+Period=10
+
+[Password]
+Password=
+LCM & Reset Protect=0
+

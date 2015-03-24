@@ -21,6 +21,7 @@ public class ProcessDB882 {
     /*
      * Az utolsó rekord
      */
+
     private static DB882 newDB882;
     /*
      * Az utolsó elötti record
@@ -81,10 +82,9 @@ public class ProcessDB882 {
                     MainApp.debug.printDebugMsg(null, ProcessDB882.class.getName(), "(error) SelectDB882 :", ex);
                 }
             }
-        } else {/*
-             * Új tekercset hengerelnek, vagy leszedték a régi tekercset.
-             */
+        } else {
             /*
+             * Új tekercset hengerelnek, vagy leszedték a régi tekercset.
              * A tekercslevételt jelző bitet false-ba álítjuk
              */
             MainApp.CoilRemoveFromTensionReal = false;
@@ -106,8 +106,8 @@ public class ProcessDB882 {
                 System.out.println(new Date().toString() + " - " + dB882.CoilId.getMyString()
                         + " tekercs elkészült. "
                         + tcp.record.size() + " record rögzítve");
-                System.out.println(new Date().toString() + " - " + "Tekercs súly a mérlegtől: "+MainApp.removedCoilData.CoilMeasWeight);
-                System.out.println(new Date().toString() + " - " + "Tekercs súly (számított): "+MainApp.removedCoilData.CoilCalWeight);
+                System.out.println(new Date().toString() + " - " + "Tekercs súly a mérlegtől: " + MainApp.removedCoilData.CoilMeasWeight);
+                System.out.println(new Date().toString() + " - " + "Tekercs súly (számított): " + MainApp.removedCoilData.CoilCalWeight);
                 MainApp.debug.printDebugMsg(null, ProcessDB882.class.getName(), "SelectDB882 :" + dB882.CoilId.getMyString()
                         + " tekercs elkészült. "
                         + tcp.record.size() + " record rögzítve");
@@ -137,7 +137,7 @@ public class ProcessDB882 {
                  * A végeredményt adatbázisba mentjük.
                  */
                 MainApp.sql.record(start_time, stop_time, dB882.CoilId.getMyString(), buffer);
-                
+
             }
             start_time = sdf.format(new Date());
         }

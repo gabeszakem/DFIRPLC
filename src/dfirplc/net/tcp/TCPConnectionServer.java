@@ -49,10 +49,7 @@ public class TCPConnectionServer extends Thread {
     /**
      * Az üzeneteket tartalmazó "SOR"
      */
-    public ArrayDeque<byte[]> bbs;
-    /**
-     * A rekordokat tartalmazó Lista
-     */
+    
     public ArrayList<Object> record;
     /**
      * DB mezőinek hosszának mérete
@@ -84,7 +81,6 @@ public class TCPConnectionServer extends Thread {
         this.object = object;
         this.rw = rw;  //rw= false olvasunk, rw= true irunk az tcp-n keresztül
         this.bufferSize = bufferSize; //bufferSize inicializálása
-        this.bbs = new ArrayDeque<>(); //bbs inicializálása
         this.record = new ArrayList(); //record inicializálása
         this.dBSize = ObjectSize.getSize(object); //dbsize kiszámolása
         try {
@@ -184,8 +180,7 @@ public class TCPConnectionServer extends Thread {
                     } else {
                         System.err.println(new Date() + " TCPConnectionServer: receiveTelegram = null");
                         MainApp.debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(error) " + "(" + this.db.getClass().getSimpleName() + ") TCPConnectionServer : receiveTelegram = null");
-                        MainApp.debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(error) " + "(" + this.db.getClass().getSimpleName() + ") Numbers of element dequeu: " + bbs.size());
-                    }
+                        }
 
                     /*
                      * Debugolási célra a telegram sorszámának és a méretének

@@ -1,0 +1,325 @@
+
+FUNCTION_BLOCK DISOMAT_F_MEAS
+
+TITLE = 'DISOMAT F mért tömeg lekédezés'
+// DISOMAT F mért tömeg lekédezés
+// ------------------------------
+//
+// Protokoll: SCHENK DDP8785
+//
+// COMM_STATUS értékei:
+//      00 - A kommunikáció nincs megkezdve
+//      01 - A kommunikáció folyamatban van
+//      02 - A kommunikáció sikeresen lezajlott
+//      10 - Hiba történt küldés közben (AG_LSEND blokk hibára futott)
+//           Az AG_LSEND blokk által küldött státusz a SEND_STATUS kimeneten található.
+//      20 - Hiba történt fogadás közben (AG_LRECV blokk hibára futott)
+//           Az AG_LRECV blokk által küldött státusz a RECV_STATUS kimeneten található.
+//      21 - Nem érkezett válasz a mérlegtol 5 sec-en belül (idotúllépés)
+//      22 - A fogadott adatok hossza nem megfelelo (nem 39 karakter)
+//      23 - A fogadott adatcsomag nem értelmezheto
+
+AUTHOR: 'FD'
+VERSION: '1.0'
+
+// Bemeneti változók
+VAR_INPUT
+    TRIG_MEAS: BOOL;    // Súly lekérdezése a mérlegtol
+    ID: INT;            // Partner id (NetPro-ból)
+    LADDR: WORD;        // CP címe
+    T: TIMER;           // Idotúllépés feigyeléshez használt timer
+END_VAR
+
+// Kimeneti változók
+VAR_OUTPUT
+    WEIGHT: INT;            // Mért tömeg [kg]
+    TARA: INT;              // Tára [kg]
+    DG_DT: INT;             // dG/dt [kg]
+    DISOMAT_STATUS: WORD;   // Mérleg állapota
+    COMM_ERROR: BOOL;       // Kommunikációs hiba
+    COMM_STATUS: WORD := 0; // Kommunikáció állapota
+    SEND_STATUS: WORD;      // ETH küldés állapot
+    RECV_STATUS: WORD;      // ETH fogadás állapot
+END_VAR
+
+// Statikus változók
+VAR
+    SEND_ERROR: BOOL;           // ETH küldés hiba
+    RECV_ERROR: BOOL;           // ETH fogadás hiba
+
+    DISOMAT_SEND_DATA: ARRAY[0..8] OF BYTE;     // Mérlegnek küldendo adatok
+    DISOMAT_RECV_DATA: ARRAY[0..35] OF BYTE;     // Mérlegtol érkezett adatok
+    
+    COMM_ENABLE: BOOL;          // Kommunikáció engedély
+
+    SEND_REQ: BOOL;             // Küldés parancs
+    SEND_LEN: INT;              // Küldendo adatok hossza
+    SEND_DONE: BOOL;            // Küldés kész
+
+    RECV_REQ: BOOL;             // Fogadás parancs
+    RECV_NDR: BOOL;             // Fogadás - új adatok érkeztek
+    RECV_LEN: INT;              // Érkezett adatok hossza
+
+
+    TEMPINT1: INT;              // Ideiglenes INT változó 1
+    TEMPINT2: INT;              // Ideiglenes INT változó 2
+    TEMPBOOL1: BOOL;            // Ideiglenes BOOL változó 1
+    TEMPCHAR1: CHAR;            // Ideiglenes CHAR változó 1
+    TEMPWORD1: WORD;            // Ideiglenes WORD változó 1
+    COMM_TIMEOUT: BOOL;         // Kommunikáció idotúllépés
+
+    TIMERTIME: S5TIME;          // Idotúllépés hátralévo ido
+    TIMEOUT_TIME: S5TIME;       // Idotúllépés idotartam
+    TIMEOUT_TIMER_ON: BOOL;     // Idotúllépés figyelo timer engedélyezése
+    TIMEOUT_TIMER_RESET: BOOL;  // Idotúllépés figyelo timer resetelése
+
+    WEIGHT_TMP: INT;            // Ideiglenes tároló a súly ASCII->INT konverzióhoz
+    TARA_TMP: INT;              // Ideiglenes tároló a tára ASCII->INT konverzióhoz
+    DG_DT_TMP: INT;             // Ideiglenes tároló a dG/dt ASCII->INT konverzióhoz
+    STATUS_TMP: WORD;           // Ideiglenes tároló a státusz ASCII->WORD konverzióhoz
+
+    SEQ_STEP_NR: INT;           // Folyamat aktuális lépés
+END_VAR
+
+
+VAR_TEMP
+    DISOMAT_RECV_DATA2: ARRAY[0..35] OF BYTE;     // Mérlegtol érkezett adatok
+    PTR: INT;                                      //Mérlegtol érkezett adat eltolodás figyeléshez használt mutató
+END_VAR
+
+// Kommunkiáció indítása és inicializálás
+IF (NOT COMM_ENABLE) AND TRIG_MEAS THEN
+    COMM_ENABLE := TRUE;
+    SEQ_STEP_NR := 0;
+    COMM_ERROR := FALSE;
+    COMM_STATUS := W#16#01;
+    SEND_ERROR := FALSE;
+    SEND_STATUS := 0;
+    SEND_DONE := FALSE;
+    SEND_REQ := FALSE;
+    RECV_ERROR := FALSE;
+    RECV_NDR := FALSE;
+    RECV_STATUS := 0;
+    RECV_REQ := FALSE;
+    TIMEOUT_TIMER_RESET := TRUE;
+    TIMEOUT_TIMER_ON := FALSE;
+    WEIGHT := 0;
+    TARA := 0;
+    DG_DT := 0;
+    DISOMAT_STATUS := W#16#0;
+END_IF;
+
+// Kommunikáció lebonyolítása
+IF (COMM_ENABLE) THEN
+
+    // Lépésszámnak megfelelo muvelet végrehajtása
+    CASE SEQ_STEP_NR OF
+
+        0 : // Adatkérelem (<STX>00#TG#<ETX><BCC>)
+            DISOMAT_SEND_DATA[0] := B#16#02;    // <STX>
+            DISOMAT_SEND_DATA[1] := B#16#30;    // 0
+            DISOMAT_SEND_DATA[2] := B#16#30;    // 0            
+            DISOMAT_SEND_DATA[3] := B#16#23;    // #
+            DISOMAT_SEND_DATA[4] := B#16#54;    // T
+            DISOMAT_SEND_DATA[5] := B#16#47;    // G
+            DISOMAT_SEND_DATA[6] := B#16#23;    // #
+            DISOMAT_SEND_DATA[7] := B#16#03;    // <ETX>
+            DISOMAT_SEND_DATA[8] := B#16#10;    // <BCC> (a kezdo STX kivételével a csomag minden bájtja XOR-olva)
+
+            SEND_LEN := 9;
+            SEND_REQ := TRUE;
+            
+            SEQ_STEP_NR := SEQ_STEP_NR + 1;
+
+        1 : // Küldés sikeres volt-e?
+            IF (NOT SEND_REQ AND SEND_DONE) THEN
+//                SEND_DONE := FALSE;
+//                SEND_ERROR := FALSE;
+//                SEND_STATUS := 0;
+                SEQ_STEP_NR := SEQ_STEP_NR + 1;
+            END_IF;
+            
+            // Küldés hiba figyelése
+            IF SEND_ERROR THEN
+                COMM_STATUS := W#16#10;
+                COMM_ERROR := TRUE;
+            END_IF;
+            
+        2 : // Várakozás adatra a mérlegtol (<STX>00#TG#súly (7 karakter)#tára (7 karakter)#dG/dt (7 karakter)#státusz (2 karakter)#<ETX><BCC>)
+            TIMEOUT_TIME := T#5s;
+            TIMEOUT_TIMER_ON := TRUE;
+
+            RECV_REQ := TRUE;
+            SEQ_STEP_NR := SEQ_STEP_NR + 1;
+
+        3: // Kapott adatok ellenorzése
+            
+            // Folyamatos lekérdezés, ameddig az ethernet adatfogadó puffer ki nem ürül
+//            IF (RECV_LEN > 0) THEN
+//                RECV_REQ := TRUE;
+//            END_IF;
+            
+            IF (NOT RECV_REQ) AND (NOT RECV_ERROR) THEN
+                // Értelmezheto adat érkezett (a visszaadott cím és parancs ugyanaz)
+                TEMPBOOL1 := TRUE;
+                TEMPINT1 := 0;
+                
+                WHILE (TEMPBOOL1 AND (TEMPINT1 < 7)) DO
+                    IF (DISOMAT_RECV_DATA[TEMPINT1] <> DISOMAT_SEND_DATA[TEMPINT1]) THEN
+                        TEMPBOOL1 := FALSE;
+                    END_IF;
+                    TEMPINT1 := TEMPINT1 + 1;
+                END_WHILE;
+                
+                IF TEMPBOOL1 THEN
+                    RECV_ERROR := 0;
+                    RECV_STATUS := 0;
+                    SEQ_STEP_NR := SEQ_STEP_NR + 1;
+                ELSE
+                    // Ha egyéb más érkezett, akkor hiba
+                    COMM_STATUS := W#16#23;
+                    COMM_ERROR := TRUE;
+                END_IF;
+            END_IF;
+           
+            // Idotúllépés figyelése
+            IF COMM_TIMEOUT THEN
+                COMM_STATUS := W#16#21;
+                COMM_ERROR := TRUE;
+            END_IF;
+            
+            // Fogadás hiba figyelése
+            IF RECV_ERROR THEN
+                COMM_STATUS := W#16#20;
+                COMM_ERROR := TRUE;
+            END_IF;
+            
+        4 : // Adatok kiírása a kimenetre
+            WEIGHT_TMP := 0;
+            TARA_TMP := 0;
+            DG_DT_TMP := 0;
+            STATUS_TMP := W#0;
+
+            // Az érkezett adatok konvertálása (tizedes vesszo utáni értékek elhagyásával)
+            FOR TEMPINT1 := 0 TO 6 BY 1 DO
+
+                // Tömeg
+                TEMPINT2 := BYTE_TO_INT(DISOMAT_RECV_DATA[TEMPINT1 + 7]) - INT#16#30;
+                IF ((TEMPINT2 >= 0) AND (TEMPINT2 <= 9)) THEN
+                    WEIGHT_TMP := WEIGHT_TMP + TEMPINT2 * REAL_TO_INT(10 ** (6 - TEMPINT1));
+                END_IF;
+                
+                // Tára
+                TEMPINT2 := BYTE_TO_INT(DISOMAT_RECV_DATA[TEMPINT1 + 15]) - INT#16#30;
+                IF ((TEMPINT2 >= 0) AND (TEMPINT2 <= 9)) THEN
+                    TARA_TMP := TARA_TMP + TEMPINT2 * REAL_TO_INT(10 ** (6 - TEMPINT1));
+                END_IF;
+                
+                // dG/dt
+                TEMPINT2 := BYTE_TO_INT(DISOMAT_RECV_DATA[TEMPINT1 + 23]) - INT#16#30;
+                IF ((TEMPINT2 >= 0) AND (TEMPINT2 <= 9)) THEN
+                    DG_DT_TMP := DG_DT_TMP + TEMPINT2 * REAL_TO_INT(10 ** (6 - TEMPINT1));
+                END_IF;
+
+                // Státusz
+                IF (TEMPINT1 <= 1) THEN
+                    TEMPINT2 := BYTE_TO_INT(DISOMAT_RECV_DATA[TEMPINT1 + 31]);
+                    
+                    // ASCII -> hexa átalakítás (9-nél nagyobb helyiértékek mindig kisbetuvel jönnek)
+                    IF (TEMPINT2 > INT#16#39) THEN
+                        TEMPINT2 := 10 + (TEMPINT2 - INT#16#61);
+                    ELSE
+                        TEMPINT2 := TEMPINT2 - INT#16#30;
+                    END_IF;                    
+                    
+                    IF ((TEMPINT2 >= 0) AND (TEMPINT2 <= 15)) THEN
+                        STATUS_TMP := INT_TO_WORD(WORD_TO_INT(STATUS_TMP) + TEMPINT2 * REAL_TO_INT(16 ** (1 - TEMPINT1)));
+                    END_IF;
+                END_IF;
+                
+            END_FOR;
+
+            WEIGHT := WEIGHT_TMP;
+            TARA := TARA_TMP;
+            DG_DT := DG_DT_TMP;
+            DISOMAT_STATUS := STATUS_TMP;
+
+            COMM_ENABLE := FALSE;
+    END_CASE;
+
+
+    // Idotúllépés figyelés
+    TIMERTIME := S_ODT(T_NO := T,
+         S := TIMEOUT_TIMER_ON,
+         TV := TIMEOUT_TIME,
+         R := TIMEOUT_TIMER_RESET,
+         BI := TEMPWORD1,
+         Q := COMM_TIMEOUT);
+
+    TIMEOUT_TIMER_RESET := FALSE;
+
+    IF COMM_TIMEOUT THEN
+        SEND_REQ := FALSE;
+        RECV_REQ := FALSE;
+    END_IF;
+
+    // Küldés/fogadás
+    IF (SEND_REQ AND NOT RECV_REQ) THEN
+
+        AG_LSEND(ACT := SEND_REQ,
+            ID := ID,
+            LADDR := LADDR,
+            SEND := DISOMAT_SEND_DATA,
+            LEN := SEND_LEN,
+            DONE := SEND_DONE,
+            ERROR := SEND_ERROR,
+            STATUS := SEND_STATUS
+            );
+
+        IF (SEND_DONE OR SEND_ERROR) THEN
+            SEND_REQ := FALSE;
+        END_IF;
+        
+    END_IF;    
+    PTR:=0;
+    IF (RECV_REQ AND NOT SEND_REQ) THEN
+        
+        AG_LRECV(ID := ID,
+            LADDR := LADDR,
+            RECV := DISOMAT_RECV_DATA,
+            NDR := RECV_NDR,
+            ERROR := RECV_ERROR,
+            STATUS := RECV_STATUS,
+            LEN := RECV_LEN
+        );
+        
+        IF (RECV_NDR OR RECV_ERROR) THEN
+            FOR TEMPINT1 := 0 TO 35 DO
+                IF (DISOMAT_RECV_DATA[TEMPINT1]=B#16#02) THEN
+                    PTR:=TEMPINT1;    
+                END_IF;        
+            END_FOR;
+            
+            FOR TEMPINT1 := 0 TO 35 DO
+                IF (TEMPINT1+PTR)<36 THEN
+                       DISOMAT_RECV_DATA2[TEMPINT1]:=DISOMAT_RECV_DATA[TEMPINT1+PTR];
+                ELSE
+                       DISOMAT_RECV_DATA2[TEMPINT1]:=DISOMAT_RECV_DATA[TEMPINT1+PTR-36];
+                END_IF;        
+            END_FOR;
+
+            DISOMAT_RECV_DATA:=DISOMAT_RECV_DATA2;
+            
+            
+            RECV_REQ := FALSE;
+        END_IF;
+    END_IF;
+    PTR:=PTR;
+    IF COMM_ERROR THEN
+        COMM_ENABLE := FALSE;
+    END_IF;
+    
+END_IF;
+ 
+END_FUNCTION_BLOCK
+

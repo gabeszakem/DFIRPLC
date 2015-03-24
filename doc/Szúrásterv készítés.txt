@@ -1,0 +1,38 @@
+Honnan jön							SZT küldés					címe						Szurasterv DB
+-------------------------------------------------------------------------------------------------------------
+Normál eset!!!  Mindíg írja legfeljebb ha kell akkor küldés elött felülírja
+
+V_tek_ID  					->		SZT_tek_ID					E0_122						coilid			
+V_hmu_file_acélminõség_1 	-> 		SZT_Acélminõség				E0_130						steelgrade
+V_tek_akt_vastagság / 1000 	->		SZT_vast_LSB				E0_142						thickness
+V_tek_akt_szélesség			->		SZT_szél_LSB				E0_140						width
+V_tek_akt_súly				->		SZT_Súly_LSB				E0_144						weight
+V_tek_belsõ_átmérõ			->		SZT_Bödönátmérõ				E0_172						corediameter
+1							->		SZT_kilépõ_tekercsek_száma 	E0_148						exitcoilsno
+
+							->		SZT_Hossz_LSB				E0_146						length  
+SZT_Hossz_LSB=(V_tek_akt_súly/[(V_tek_akt_szélesség/1000)*(V_tek_akt_vastagság/1000000)])/Vas falysúly(7860)
+
+V_tek_nyúlás_fix(Elõírt nyúlás)/20 ->	SZT_nyúlás_ref_LSB			E0_154					elongation
+????? NEM ÉRTEM MIÉRT VAN 20-AL ELOSZTVA ???????		
+
+V_tek_dressz_típus (dreszírozás típusa S vagy N)
+Ha S	0					->   	SZT_dressz_módja				E0_153					processtype				
+Ha N	1					->   	SZT_dressz_módja
+
+
+-------------------------------------------------------------------------------------------------------------
+Ha a tekercs osztás módja 1 vagy 3 akkor !!!!!!
+
+SZT_Hossz_LSB	/2			->		SZT_elsõ_kilépõ_tekercs_hossza_LSB E0_149			exitcoil1length
+SZT_elsõ_kilépõ_tekercs_hossza_LSB ->	SZT_második_kilépõ_tekercs_hossza_LSB E0_151	exitcoil2length
+2							->		SZT_kilépõ_tekercsek_száma 	E0_148					exitcoilsno
+-------------------------------------------------------------------------------------------------------------
+a a tekercs osztás módja 2 akkor !!!!!!
+
+SZT_Hossz_LSB	/3			->		SZT_elsõ_kilépõ_tekercs_hossza_LSB E0_149			exitcoil1length	
+SZT_elsõ_kilépõ_tekercs_hossza_LSB ->	SZT_második_kilépõ_tekercs_hossza_LSB E0_151	exitcoil2length
+3								->		SZT_kilépõ_tekercsek_száma 	E0_148					exitcoilsno
+--------------------------------------------------------------------------------------------------------------
+
+
