@@ -3,7 +3,7 @@
  */
 package dfirplc.net.tcp;
 
-import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import dfirplc.tools.S7String;
 import java.lang.reflect.Field;
 import java.util.Date;
@@ -66,12 +66,12 @@ public class ObjectSize {
                 } else {
                     System.err.println(new Date() + " " + ObjectSize.class.getName() + " Nincs "
                             + s + " változó deklarálva.");
-                    MainApp.debug.printDebugMsg(null,ObjectSize.class.getName(),"(warning) ObjectSize : Nincs " + s + " változó deklarálva.");
+                   debug.printDebugMsg(null,ObjectSize.class.getName(),"(warning) ObjectSize : Nincs " + s + " változó deklarálva.");
                 }
 
             } catch (Exception ex) {
                 System.err.println(ex);
-                MainApp.debug.printDebugMsg(null,ObjectSize.class.getName(),"(error) Exception:",ex);
+               debug.printDebugMsg(null,ObjectSize.class.getName(),"(error) Exception:",ex);
             }
         }
         return pointer;

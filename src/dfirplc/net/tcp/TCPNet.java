@@ -1,6 +1,7 @@
 package dfirplc.net.tcp;
 
 import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -34,7 +35,7 @@ public class TCPNet {
          * Üzenet kiírása
          */
         System.out.println(new Date().toString() + " TCP szerver létrehozása a " + port + " porton...");
-        MainApp.debug.printDebugMsg(null, TCPNet.class.getName(), " TCP szerver létrehozása a " + port + " porton...");
+        debug.printDebugMsg(null, TCPNet.class.getName(), " TCP szerver létrehozása a " + port + " porton...");
         serverSocket.setReuseAddress(true);     // Bind hiba elkerülése miatt
         /*
          * Üzenet vesztés miatt lett beírva, de vélhetően nem ez okozta a
@@ -47,7 +48,7 @@ public class TCPNet {
          * Üzenet kiírása
          */
         System.out.println(new Date().toString() + " TCP szerver figyel a " + port + " porton...");
-        MainApp.debug.printDebugMsg(null, TCPNet.class.getName(), " TCP szerver figyel a " + port + " porton...");
+        debug.printDebugMsg(null, TCPNet.class.getName(), " TCP szerver figyel a " + port + " porton...");
     }
 
     /**
@@ -67,7 +68,7 @@ public class TCPNet {
                  * Hiba esetén Üzenet kiírása
                  */
                 System.out.println(new Date().toString() + " Kliens (" + clientSocket.getRemoteSocketAddress() + ") lekapcsolódott a " + this.port + " porton.");
-                MainApp.debug.printDebugMsg(null, TCPNet.class.getName(), " Kliens (" + clientSocket.getRemoteSocketAddress() + ") lekapcsolódott a " + this.port + " porton.");
+                debug.printDebugMsg(null, TCPNet.class.getName(), " Kliens (" + clientSocket.getRemoteSocketAddress() + ") lekapcsolódott a " + this.port + " porton.");
             }
             //Szerver várakozik a kliens kapcsolatra
             this.clientSocket = serverSocket.accept();
@@ -80,7 +81,7 @@ public class TCPNet {
              * Üzenet kiírása
              */
             System.out.println(new Date().toString() + " Kliens (" + clientSocket.getRemoteSocketAddress() + ") kapcsolódott a " + this.port + " porton.");
-            MainApp.debug.printDebugMsg(null, TCPNet.class.getName(), " Kliens (" + clientSocket.getRemoteSocketAddress() + ") kapcsolódott a " + this.port + " porton.");
+            debug.printDebugMsg(null, TCPNet.class.getName(), " Kliens (" + clientSocket.getRemoteSocketAddress() + ") kapcsolódott a " + this.port + " porton.");
         }
         try {
             /**
@@ -100,7 +101,7 @@ public class TCPNet {
                 if (bufsize == -1) {
                     clientSocket.close();
                     result = false;
-                    MainApp.debug.printDebugMsg(null, TCPNet.class.getName(), " TCPNet bufsize = -1 a " + clientSocket.getRemoteSocketAddress() + "kilens lekapcsolódott ");
+                    debug.printDebugMsg(null, TCPNet.class.getName(), " TCPNet bufsize = -1 a " + clientSocket.getRemoteSocketAddress() + "kilens lekapcsolódott ");
                 } else {
                     for (int i = 0; i < bufsize; i++) {
                         retString = retString + cbuf.get(i);
@@ -115,7 +116,7 @@ public class TCPNet {
                  *
                  */
                 System.out.println(new Date().toString() + " Kliens (" + clientSocket.getRemoteSocketAddress() + ") kapcsolat bezárása");
-                MainApp.debug.printDebugMsg(null, TCPNet.class.getName(), " Kliens (" + clientSocket.getRemoteSocketAddress() + ") kapcsolat bezárása");
+                debug.printDebugMsg(null, TCPNet.class.getName(), " Kliens (" + clientSocket.getRemoteSocketAddress() + ") kapcsolat bezárása");
                 /*
                  * Az üzenetet eldobjuk
                  */
@@ -130,7 +131,7 @@ public class TCPNet {
              * Hiba esetén Üzenet kiírása
              */
             System.err.println(new Date().toString() + " " + this.getClass() + " " + ex.getMessage());
-            MainApp.debug.printDebugMsg(null, TCPNet.class.getName(), "(error) TCPNet :", ex);
+            debug.printDebugMsg(null, TCPNet.class.getName(), "(error) TCPNet :", ex);
             /*
              * A kapcsolatot bezárjuk
              */
@@ -159,7 +160,7 @@ public class TCPNet {
                  * Hiba esetén Üzenet kiírása
                  */
                 System.out.println(new Date().toString() + " Kliens (" + clientSocket.getRemoteSocketAddress() + ") lekapcsolódott a " + this.port + " porton.");
-                MainApp.debug.printDebugMsg(null, TCPNet.class.getName(), " Kliens (" + clientSocket.getRemoteSocketAddress() + ") lekapcsolódott a " + this.port + " porton.");
+                debug.printDebugMsg(null, TCPNet.class.getName(), " Kliens (" + clientSocket.getRemoteSocketAddress() + ") lekapcsolódott a " + this.port + " porton.");
             }
             //Szerver várakozik a kliens kapcsolatra
             this.clientSocket = serverSocket.accept();
@@ -167,7 +168,7 @@ public class TCPNet {
              * Üzenet kiírása
              */
             System.out.println(new Date().toString() + " Kliens (" + clientSocket.getRemoteSocketAddress() + ") kapcsolódott a " + this.port + " porton.");
-            MainApp.debug.printDebugMsg(null, TCPNet.class.getName(), " Kliens (" + clientSocket.getRemoteSocketAddress() + ") kapcsolódott a " + this.port + " porton.");
+            debug.printDebugMsg(null, TCPNet.class.getName(), " Kliens (" + clientSocket.getRemoteSocketAddress() + ") kapcsolódott a " + this.port + " porton.");
         }
         try {
             /*
@@ -187,7 +188,7 @@ public class TCPNet {
              * Hiba esetén Üzenet kiírása
              */
             System.err.println(new Date().toString() + " " + this.getClass() + " " + ex.getMessage());
-            MainApp.debug.printDebugMsg(null, TCPNet.class.getName(), "(error) TCPNet :", ex);
+            debug.printDebugMsg(null, TCPNet.class.getName(), "(error) TCPNet :", ex);
             /*
              * A kapcsolatot bezárjuk
              */

@@ -5,6 +5,7 @@
 package dfirplc.tools;
 
 import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import java.lang.reflect.Field;
 import java.util.Date;
 
@@ -45,7 +46,7 @@ public class ClassToString {
                     }
                 } catch (IllegalAccessException ex) {
                     System.err.println(new Date() +" : " + ex.getMessage());
-                    MainApp.debug.printDebugMsg(null,ClassToString.class.getName(),"(error) ClassTOString :",ex);
+                   debug.printDebugMsg(null,ClassToString.class.getName(),"(error) ClassTOString :",ex);
                 }
                 result.append(newLine);
             }

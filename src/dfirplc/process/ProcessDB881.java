@@ -3,9 +3,9 @@
  */
 package dfirplc.process;
 
-import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import dfirplc.net.tcp.TCPConnectionServer;
-import dfirplc.tools.CopyObjectValues;
+import tools.CopyObjectValues;
 import java.util.Date;
 
 /**
@@ -24,7 +24,7 @@ public class ProcessDB881 {
             tcp.object = CopyObjectValues.copy(tcp.object, tcp.db);
         } catch (IllegalAccessException ex) {
             System.err.println(new Date() +" : " + ex.getMessage());
-            MainApp.debug.printDebugMsg(null,ProcessDB881.class.getName(),"(error) SelectDB881 :",ex);
+           debug.printDebugMsg(null,ProcessDB881.class.getName(),"(error) SelectDB881 :",ex);
         }
     }
     

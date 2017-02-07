@@ -5,7 +5,15 @@
  */
 package dfirplc.tray;
 
-import dfirplc.MainApp;
+import static dfirplc.MainApp.DRESSPANELISENABLED;
+import static dfirplc.MainApp.FRAMEISENABLED;
+import static dfirplc.MainApp.LOGPANELISENABLED;
+import static dfirplc.MainApp.LOGVIEWERISENABLED;
+import static dfirplc.MainApp.debug;
+import static dfirplc.MainApp.dress;
+import static dfirplc.MainApp.frame;
+import static dfirplc.MainApp.logViewer;
+import static dfirplc.MainApp.textAreaLog;
 import java.awt.AWTException;
 import java.awt.Image;
 import java.awt.MenuItem;
@@ -39,12 +47,19 @@ public class Tray {
          */
         if (SystemTray.isSupported()) {
 
-            if (MainApp.FRAMEISENABLED) {
-                MainApp.frame.setVisible(false);
+            if (FRAMEISENABLED) {
+                frame.setVisible(false);
             }
-            if(MainApp.DRESSPANELISENABLED){
-                MainApp.dress.setVisible(false);
+            if (DRESSPANELISENABLED) {
+                dress.setVisible(false);
             }
+            if (LOGVIEWERISENABLED) {
+                logViewer.setVisible(false);
+            }
+            if (LOGPANELISENABLED) {
+                textAreaLog.setVisible(false);
+            }
+
             tray = SystemTray.getSystemTray();
             image = Toolkit.getDefaultToolkit().getImage(Tray.class.getResource("/dfirplc/images/testimonials.png"));
 
@@ -79,16 +94,16 @@ public class Tray {
             };
 
             PopupMenu popup = new PopupMenu();
-            if (MainApp.FRAMEISENABLED) {
+            if (FRAMEISENABLED) {
                 MenuItem logItem = new MenuItem("table");
                 logItem.addActionListener(new ActionListener() {
 
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        if (MainApp.frame.isVisible()) {
-                            MainApp.frame.setVisible(false);
+                        if (frame.isVisible()) {
+                            frame.setVisible(false);
                         } else {
-                            MainApp.frame.setVisible(true);
+                            frame.setVisible(true);
                         }
 
                     }
@@ -96,16 +111,16 @@ public class Tray {
                 popup.add(logItem);
                 popup.addSeparator();
             }
-            if (MainApp.DRESSPANELISENABLED) {
+            if (DRESSPANELISENABLED) {
                 MenuItem dressItem = new MenuItem("dress");
                 dressItem.addActionListener(new ActionListener() {
 
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        if (MainApp.dress.isVisible()) {
-                            MainApp.dress.setVisible(false);
+                        if (dress.isVisible()) {
+                            dress.setVisible(false);
                         } else {
-                            MainApp.dress.setVisible(true);
+                            dress.setVisible(true);
                         }
 
                     }
@@ -113,17 +128,35 @@ public class Tray {
                 popup.add(dressItem);
                 popup.addSeparator();
             }
-            
-            if (MainApp.LOGPANELISENABLED) {
+
+            if (LOGPANELISENABLED) {
                 MenuItem dressItem = new MenuItem("log");
                 dressItem.addActionListener(new ActionListener() {
 
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        if (MainApp.textAreaLog.isVisible()) {
-                            MainApp.textAreaLog.setVisible(false);
+                        if (textAreaLog.isVisible()) {
+                            textAreaLog.setVisible(false);
                         } else {
-                            MainApp.textAreaLog.setVisible(true);
+                            textAreaLog.setVisible(true);
+                        }
+
+                    }
+                });
+                popup.add(dressItem);
+                popup.addSeparator();
+            }
+
+            if (LOGVIEWERISENABLED) {
+                MenuItem dressItem = new MenuItem("logviewer");
+                dressItem.addActionListener(new ActionListener() {
+
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (logViewer.isVisible()) {
+                            logViewer.setVisible(false);
+                        } else {
+                            logViewer.setVisible(true);
                         }
 
                     }
@@ -151,27 +184,38 @@ public class Tray {
                      * trayIcon.displayMessage("Action Event", "",
                      * TrayIcon.MessageType.INFO);
                      */
-                    if(MainApp.FRAMEISENABLED){
-                    if (MainApp.frame.isVisible()) {
-                        MainApp.frame.dispose();
-                    } else {
-                        MainApp.frame.setState(JFrame.NORMAL);
-                        MainApp.frame.setVisible(true);
-                    }}
-                    if(MainApp.DRESSPANELISENABLED){
-                    if (MainApp.dress.isVisible()) {
-                        MainApp.dress.dispose();
-                    } else {
-                        MainApp.dress.setState(JFrame.NORMAL);
-                        MainApp.dress.setVisible(true);
-                    }}
-                    if(MainApp.LOGPANELISENABLED){
-                    if (MainApp.textAreaLog.isVisible()) {
-                        MainApp.textAreaLog.dispose();
-                    } else {
-                        MainApp.textAreaLog.setState(JFrame.NORMAL);
-                        MainApp.textAreaLog.setVisible(true);
-                    }}
+                    if (FRAMEISENABLED) {
+                        if (frame.isVisible()) {
+                            frame.dispose();
+                        } else {
+                            frame.setState(JFrame.NORMAL);
+                            frame.setVisible(true);
+                        }
+                    }
+                    if (DRESSPANELISENABLED) {
+                        if (dress.isVisible()) {
+                            dress.dispose();
+                        } else {
+                            dress.setState(JFrame.NORMAL);
+                            dress.setVisible(true);
+                        }
+                    }
+                    if (LOGPANELISENABLED) {
+                        if (textAreaLog.isVisible()) {
+                            textAreaLog.dispose();
+                        } else {
+                            textAreaLog.setState(JFrame.NORMAL);
+                            textAreaLog.setVisible(true);
+                        }
+                    }
+                    if (LOGVIEWERISENABLED) {
+                        if (textAreaLog.isVisible()) {
+                            logViewer.dispose();
+                        } else {
+                            logViewer.setState(JFrame.NORMAL);
+                            logViewer.setVisible(true);
+                        }
+                    }
                 }
             };
             trayIcon.setImageAutoSize(true);
@@ -182,15 +226,15 @@ public class Tray {
                 tray.add(trayIcon);
             } catch (AWTException ex) {
                 System.out.println("Hiba történt a program tálcán futtatásakor (" + Tray.class.getSimpleName() + ")" + ex.getMessage());
-                MainApp.debug.printDebugMsg(null, Tray.class.getName(),
+                debug.printDebugMsg(null, Tray.class.getName(),
                         "Hiba történt a program tálcán futtatásakor", ex);
             }
 
         } else {
             System.out.println("System tray nem támogatott (" + Tray.class.getSimpleName() + ")");
-            MainApp.debug.printDebugMsg(null, Tray.class.getName(),
+            debug.printDebugMsg(null, Tray.class.getName(),
                     "System tray nem támogatott");
-            MainApp.frame.setVisible(true);
+            frame.setVisible(true);
         }
     }
 

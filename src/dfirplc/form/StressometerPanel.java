@@ -6,7 +6,7 @@
 package dfirplc.form;
 
 import dfirplc.db.DB882;
-import dfirplc.tools.FloatConvert;
+import tools.math.FloatConvert;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;

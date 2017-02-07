@@ -5,7 +5,7 @@
  */
 package dfirplc.form;
 
-import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import dfirplc.db.DB882;
 import dfirplc.net.tcp.TCPConnectionServer;
 import java.awt.Toolkit;
@@ -170,7 +170,7 @@ public class DressFrame extends javax.swing.JFrame {
 
             } catch (Exception ex) {
                 System.out.println(new Date() + " : " + ex.getMessage());
-                MainApp.debug.printDebugMsg(null, Frame_.class.getName(), "(error) FillDataFromBuffer :", ex);
+                debug.printDebugMsg(null, Frame_.class.getName(), "(error) FillDataFromBuffer :", ex);
             }
         }
     }

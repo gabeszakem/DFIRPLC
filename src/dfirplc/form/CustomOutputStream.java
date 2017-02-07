@@ -1,6 +1,7 @@
 package dfirplc.form;
 
 import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import java.io.IOException;
 import java.io.OutputStream;
 import javax.swing.JLabel;
@@ -73,7 +74,7 @@ public class CustomOutputStream extends OutputStream {
                     textArea.getDocument().remove(rangeStart, rangeEnd - rangeStart);
 
                 } catch (BadLocationException ex) {
-                    MainApp.debug.printDebugMsg(null, CustomOutputStream.class.getName(), "(error) text törlése nem sikerült...", ex);
+                   debug.printDebugMsg(null, CustomOutputStream.class.getName(), "(error) text törlése nem sikerült...", ex);
                 }
             }
             label.setText(Integer.toString(textArea.getDocument().getDefaultRootElement().getElementCount()-1));

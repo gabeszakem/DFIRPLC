@@ -5,6 +5,7 @@
 package dfirplc.form;
 
 import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import dfirplc.net.tcp.TCPConnectionServer;
 import dfirplc.tools.S7String;
 import java.lang.reflect.Field;
@@ -40,7 +41,7 @@ public class Frame_ extends javax.swing.JFrame {
                 this.jTabbedPane1.addTab(className, new Table(server.object));
             } catch (Exception ex) {
                 System.out.println(new Date() + " : " + ex.getMessage());
-                MainApp.debug.printDebugMsg(null,Frame_.class.getName(),"(error) FillDataFromBuffer :" ,ex);
+               debug.printDebugMsg(null,Frame_.class.getName(),"(error) FillDataFromBuffer :" ,ex);
             }
         }
     }
@@ -81,7 +82,7 @@ public class Frame_ extends javax.swing.JFrame {
 
                     } catch (Exception ex) {
                         System.out.println(new Date() + " : " + ex.getMessage());
-                        MainApp.debug.printDebugMsg(null,Frame_.class.getName(),"(error) Frame_ :",ex);
+                       debug.printDebugMsg(null,Frame_.class.getName(),"(error) Frame_ :",ex);
                     }
                 }
             }

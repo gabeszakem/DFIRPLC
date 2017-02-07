@@ -6,8 +6,8 @@
 package dfirplc.form;
 
 import dfirplc.db.DB882;
-import dfirplc.form.tools.CircleTangents;
-import dfirplc.tools.FloatConvert;
+import form.tools.CircleTangents;
+import tools.math.FloatConvert;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;

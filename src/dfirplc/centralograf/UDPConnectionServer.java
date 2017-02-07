@@ -5,6 +5,7 @@
 package dfirplc.centralograf;
 
 import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import dfirplc.db.DB882;
 import dfirplc.db.DB887;
 import dfirplc.net.tcp.TCPConnectionServer;
@@ -68,7 +69,7 @@ public class UDPConnectionServer extends Thread {
 
             } catch (Exception ex) {
                 ex.printStackTrace(System.err);
-                MainApp.debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(error) createPanel :", ex);
+               debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(error) createPanel :", ex);
             }
         }
     }
@@ -95,11 +96,11 @@ public class UDPConnectionServer extends Thread {
                                 if (previousLifeSignal != db887.LifeSignal) {
                                     if (count > 0) {
                                         if (count > MAXCOUNT) {
-                                            MainApp.debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(error) Thread(\"Timer(Centralograf message)\") : previousLifeSignal != db887.LifeSignal"
+                                           debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(error) Thread(\"Timer(Centralograf message)\") : previousLifeSignal != db887.LifeSignal"
                                                     + " A PLC-től nem érkezett életjel. UDP kapcsolat blokkolva. count: " + count
                                                     + " LifeSignal: " + db887.LifeSignal + " LifeSignalError: " + db887.LifeSignalError);
                                         } else {
-                                            MainApp.debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(warning) Thread(\"Timer(Centralograf message)\") : previousLifeSignal != db887.LifeSignal"
+                                           debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(warning) Thread(\"Timer(Centralograf message)\") : previousLifeSignal != db887.LifeSignal"
                                                     + " A PLC-től nem érkezett életjel. UDP kapcsolat blokkolva. count: " + count
                                                     + " LifeSignal: " + db887.LifeSignal + " LifeSignalError: " + db887.LifeSignalError);
                                         }
@@ -108,11 +109,11 @@ public class UDPConnectionServer extends Thread {
                                     count = 0;
                                 } else {
                                     if (count == 0) {
-                                        MainApp.debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(warning) Thread(\"Timer(Centralograf message)\") : previousLifeSignal != db887.LifeSignal"
+                                       debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(warning) Thread(\"Timer(Centralograf message)\") : previousLifeSignal != db887.LifeSignal"
                                                 + " A PLC-től nem érkezett életjel.  LifeSignal: " + db887.LifeSignal + " LifeSignalError: " + db887.LifeSignalError);
                                     }
                                     if (count == MAXCOUNT) {
-                                          MainApp.debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(error) Thread(\"Timer(Centralograf message)\") : previousLifeSignal != db887.LifeSignal"
+                                         debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(error) Thread(\"Timer(Centralograf message)\") : previousLifeSignal != db887.LifeSignal"
                                                     + " A PLC-től nem érkezett életjel. UDP kapcsolat blokkolva lesz. count: " + count
                                                     + " LifeSignal: " + db887.LifeSignal + " LifeSignalError: " + db887.LifeSignalError);
                                     }
@@ -124,7 +125,7 @@ public class UDPConnectionServer extends Thread {
 
                             } catch (Exception e) {
                                 e.printStackTrace(System.err);
-                                MainApp.debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(error) Thread(\"Timer(Centralograf message)\") :", e);
+                               debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(error) Thread(\"Timer(Centralograf message)\") :", e);
 
                             } finally {
                                 previousLifeSignal = db887.LifeSignal;
@@ -132,7 +133,7 @@ public class UDPConnectionServer extends Thread {
                         }
                     } catch (Exception ex) {
                         ex.printStackTrace(System.err);
-                        MainApp.debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(error) Thread(\"Timer(Centralograf message)\") :", ex);
+                       debug.printDebugMsg(null, UDPConnectionServer.class.getName(), "(error) Thread(\"Timer(Centralograf message)\") :", ex);
                     }
                 }
             }

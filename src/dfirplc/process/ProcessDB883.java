@@ -5,10 +5,11 @@
 package dfirplc.process;
 
 import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import dfirplc.db.DB881;
 import dfirplc.db.DB883;
 import dfirplc.net.tcp.TCPConnectionServer;
-import dfirplc.tools.CopyObjectValues;
+import tools.CopyObjectValues;
 import java.util.Date;
 
 /**
@@ -34,10 +35,10 @@ public class ProcessDB883 {
                 MainApp.removedCoilData = (DB883) CopyObjectValues.copy(MainApp.removedCoilData, newDB883);
             } catch (IllegalAccessException ex) {
                 System.err.println(new Date() + " : " + ex.getMessage());
-                MainApp.debug.printDebugMsg(null, ProcessDB883.class.getName(), "(error) SelectDB883 :", ex);
+                debug.printDebugMsg(null, ProcessDB883.class.getName(), "(error) SelectDB883 :", ex);
             }
             System.out.println(new Date().toString() + " - Felcsévélő tekercslevétel: " + newDB883.CoilId.getMyString());
-            MainApp.debug.printDebugMsg(null, ProcessDB883.class.getName(), "SelectDB883 : Felcsévélő tekercslevétel: " + newDB883.CoilId.getMyString());
+            debug.printDebugMsg(null, ProcessDB883.class.getName(), "SelectDB883 : Felcsévélő tekercslevétel: " + newDB883.CoilId.getMyString());
             for (int i = 0; i < MainApp.servers.length; i++) {
                 if (MainApp.servers[i].object.getClass().getName().equals("dfirplc.db.DB881")) {
                     /**
@@ -53,7 +54,7 @@ public class ProcessDB883 {
             }
 
         }else{
-            MainApp.debug.printDebugMsg(null, ProcessDB883.class.getName(), "(warning)SectDB883 : Felcsévélő tekercslevétel telegramm azonósítója megegyezik "+
+            debug.printDebugMsg(null, ProcessDB883.class.getName(), "(warning)SectDB883 : Felcsévélő tekercslevétel telegramm azonósítója megegyezik "+
                     "removeTRTelId: "+dB883.RemoveTRTelId+" coilId: "+dB883.CoilId.getMyString()) ;
         }
         try {
@@ -63,7 +64,7 @@ public class ProcessDB883 {
             tcp.object = CopyObjectValues.copy(tcp.object, tcp.db);
         } catch (IllegalAccessException ex) {
             System.err.println(new Date() + " : " + ex.getMessage());
-            MainApp.debug.printDebugMsg(null, ProcessDB883.class.getName(), "(error) SelectDB883 :", ex);
+            debug.printDebugMsg(null, ProcessDB883.class.getName(), "(error) SelectDB883 :", ex);
         }
     }
 }

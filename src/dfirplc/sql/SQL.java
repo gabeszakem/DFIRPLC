@@ -9,6 +9,7 @@ package dfirplc.sql;
  * @author gabesz
  */
 import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import dfirplc.db.DB885;
 import java.io.ByteArrayInputStream;
 import java.sql.*;
@@ -78,18 +79,18 @@ public class SQL {
                     + MainApp.removedCoilData.CoilCalWeight + "','"
                     + MainApp.removedCoilData.CoilThickness + "')";
             System.out.println(new java.util.Date().toString() + " - " + message);
-            MainApp.debug.printDebugMsg(null, SQL.class.getName(), message);
+           debug.printDebugMsg(null, SQL.class.getName(), message);
             int count = 0;
             try {
                 query = "UPDATE semaphore SET table_status='0' , time_stamp='" + date
                         + "' WHERE table_name='regf'";
                 System.out.println(new java.util.Date().toString() + " - " + query);
-                MainApp.debug.printDebugMsg(null, SQL.class.getName(), query);
+               debug.printDebugMsg(null, SQL.class.getName(), query);
                 st = con.prepareStatement(query);
                 count = st.executeUpdate();
             } catch (Exception ex) {
                 System.out.println(new java.util.Date().toString() + " - " + ex.getMessage());
-                MainApp.debug.printDebugMsg(null, SQL.class.getName(), "Update semaphor error", ex);
+               debug.printDebugMsg(null, SQL.class.getName(), "Update semaphor error", ex);
             }
             if (count == 0) {
                 query = "INSERT INTO semaphore (table_name, table_status, time_stamp) VALUES (?,?,?)";
@@ -100,15 +101,15 @@ public class SQL {
 
                 String queryMess = "INSERT INTO semaphore (table_name, table_status, time_stamp) VALUES ('regf','0','" + date + "')";
                 System.out.println(new java.util.Date().toString() + " - " + queryMess);
-                MainApp.debug.printDebugMsg(null, SQL.class.getName(), queryMess);
+               debug.printDebugMsg(null, SQL.class.getName(), queryMess);
 
                 st.executeUpdate();
             }
 
             // System.out.println(new java.util.Date().toString() + " - " + query);
-            // MainApp.debug.printDebugMsg(null, SQL.class.getName(), query);
+            //debug.printDebugMsg(null, SQL.class.getName(), query);
         } catch (SQLException ex) {
-            MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
+           debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
             ex.printStackTrace(System.err);
 
         } finally {
@@ -117,7 +118,7 @@ public class SQL {
                 try {
                     st.close();
                 } catch (SQLException ex) {
-                    MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
+                   debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
                     ex.printStackTrace(System.err);
                 }
             }
@@ -126,7 +127,7 @@ public class SQL {
                 try {
                     con.close();
                 } catch (SQLException ex) {
-                    MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
+                   debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
                     ex.printStackTrace(System.err);
                 }
             }
@@ -153,14 +154,14 @@ public class SQL {
                 count = rs.getInt(1);
             }
         } catch (SQLException ex) {
-            MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
+           debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
             ex.printStackTrace(System.err);
         } finally {
             if (st != null) {
                 try {
                     st.close();
                 } catch (SQLException ex) {
-                    MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
+                   debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
                     ex.printStackTrace(System.err);
                 }
             }
@@ -170,7 +171,7 @@ public class SQL {
                     con.close();
                 } catch (SQLException ex) {
                     ex.printStackTrace(System.err);
-                    MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
+                   debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
                 }
             }
         }
@@ -195,7 +196,7 @@ public class SQL {
 
             if (rs.next()) {
                 System.out.println(new java.util.Date().toString() + " - " + "SELECT * FROM `dfir`.`szurasterv` WHERE 1 order by pssschtelid limit 1");
-                MainApp.debug.printDebugMsg(null, SQL.class.getName(), "SELECT * FROM `dfir`.`szurasterv` WHERE 1 order by pssschtelid limit 1");
+               debug.printDebugMsg(null, SQL.class.getName(), "SELECT * FROM `dfir`.`szurasterv` WHERE 1 order by pssschtelid limit 1");
                 try {
 
                     pasSchID = rs.getInt("pssschtelid");
@@ -206,72 +207,72 @@ public class SQL {
                         db.DwaSteelGrade.setMyString(rs.getString("steelgrade"));
 
                     } catch (Exception e) {
-                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                       debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
                         e.printStackTrace(System.err);
                     }
                     try {
                         db.DwaWidth = rs.getFloat("width");
                     } catch (Exception e) {
-                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                       debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
                         e.printStackTrace(System.err);
                     }
                     try {
                         db.DwaThickness = rs.getFloat("thickness");
                     } catch (Exception e) {
-                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                       debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
                         e.printStackTrace(System.err);
                     }
                     try {
                         db.DwaWeight = rs.getFloat("weight") * 1000;
                     } catch (Exception e) {
-                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                       debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
                         e.printStackTrace(System.err);
                     }
                     try {
                         db.DWACoreDiameter = rs.getFloat("corediameter");
                     } catch (Exception e) {
-                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                       debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
                         e.printStackTrace(System.err);
                     }
 
                     try {
                         db.DwaExitCoilsNo = rs.getShort("exitcoilsno");
                     } catch (Exception e) {
-                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                       debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
                         e.printStackTrace(System.err);
                     }
                     try {
                         db.DwaLength = (db.DwaWeight / ((db.DwaWidth / 1000) * (db.DwaThickness / 1000)) / 7860);
                     } catch (Exception e) {
-                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                       debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
                         e.printStackTrace(System.err);
                     }
 
                     try {
                         db.DwaProcessType = rs.getShort("processtype");
                     } catch (Exception e) {
-                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                       debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
                         e.printStackTrace(System.err);
                     }
 
                     try {
                         db.DwaElongation = rs.getFloat("elongation");
                     } catch (Exception e) {
-                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                       debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
                         e.printStackTrace(System.err);
                     }
 
                     try {
                         db.DwaElongLowLim = rs.getFloat("elonglowlim");
                     } catch (Exception e) {
-                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                       debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
                         e.printStackTrace(System.err);
                     }
 
                     try {
                         db.DwaElongUpLim = rs.getFloat("elonguplim");
                     } catch (Exception e) {
-                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                       debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
                         e.printStackTrace(System.err);
                     }
 
@@ -288,19 +289,19 @@ public class SQL {
                         }
 
                     } catch (Exception e) {
-                        MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
+                       debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", e);
                         e.printStackTrace(System.err);
                     }
 
                 } catch (Exception ex) {
-                    MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
+                   debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
                     ex.printStackTrace(System.err);
                 }
             }
 
         } catch (SQLException ex) {
             ex.printStackTrace(System.err);
-            MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
+           debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
             db = null;
         } finally {
 
@@ -308,7 +309,7 @@ public class SQL {
                 try {
                     st.close();
                 } catch (SQLException ex) {
-                    MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
+                   debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
                     ex.printStackTrace(System.err);
                 }
             }
@@ -317,7 +318,7 @@ public class SQL {
                 try {
                     con.close();
                 } catch (SQLException ex) {
-                    MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
+                   debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
                     ex.printStackTrace(System.err);
                 }
             }
@@ -347,13 +348,13 @@ public class SQL {
 
                 if (rs.next()) {
                     System.out.println(new java.util.Date().toString() + " - " + query);
-                    MainApp.debug.printDebugMsg(null, SQL.class.getName(), query);
+                   debug.printDebugMsg(null, SQL.class.getName(), query);
                     date = rs.getString("ts_kuldes");
                 }
 
             } catch (Exception ex) {
                 ex.printStackTrace(System.err);
-                MainApp.debug.printDebugMsg(null, SQL.class.getName(), "SQL error:" + query, ex);
+               debug.printDebugMsg(null, SQL.class.getName(), "SQL error:" + query, ex);
                 date = sdf.format(new java.util.Date());
             }
             try {
@@ -364,14 +365,14 @@ public class SQL {
                 st = con.prepareStatement(query);
                 int result = st.executeUpdate();
 
-                MainApp.debug.printDebugMsg(null, SQL.class.getName(), query);
+               debug.printDebugMsg(null, SQL.class.getName(), query);
             } catch (Exception ex) {
                 System.out.println(new java.util.Date().toString() + " - " + ex.toString());
-                MainApp.debug.printDebugMsg(null, SQL.class.getName(), "SQL error:" + query, ex);
+               debug.printDebugMsg(null, SQL.class.getName(), "SQL error:" + query, ex);
             }
         } catch (SQLException ex) {
             ex.printStackTrace(System.err);
-            MainApp.debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
+           debug.printDebugMsg(null, SQL.class.getName(), "(error) SQL :", ex);
         } finally {
 
             if (st != null) {
@@ -379,7 +380,7 @@ public class SQL {
                     st.close();
 
                 } catch (SQLException ex) {
-                    MainApp.debug.printDebugMsg(null, SQL.class
+                   debug.printDebugMsg(null, SQL.class
                             .getName(), "(error) SQL :", ex);
                     ex.printStackTrace(System.err);
                 }
@@ -390,7 +391,7 @@ public class SQL {
                     con.close();
 
                 } catch (SQLException ex) {
-                    MainApp.debug.printDebugMsg(null, SQL.class
+                   debug.printDebugMsg(null, SQL.class
                             .getName(), "(error) SQL :", ex);
                     ex.printStackTrace(System.err);
                 }
@@ -453,7 +454,7 @@ public class SQL {
 
         } catch (SQLException ex) {
             ex.printStackTrace(System.err);
-            MainApp.debug.printDebugMsg(null, SQL.class
+           debug.printDebugMsg(null, SQL.class
                     .getName(), "(error) SQL :", ex);
         } finally {
 
@@ -462,7 +463,7 @@ public class SQL {
                     st.close();
 
                 } catch (SQLException ex) {
-                    MainApp.debug.printDebugMsg(null, SQL.class
+                   debug.printDebugMsg(null, SQL.class
                             .getName(), "(error) SQL :", ex);
                     ex.printStackTrace(System.err);
                 }
@@ -473,7 +474,7 @@ public class SQL {
                     con.close();
 
                 } catch (SQLException ex) {
-                    MainApp.debug.printDebugMsg(null, SQL.class
+                   debug.printDebugMsg(null, SQL.class
                             .getName(), "(error) SQL :", ex);
                     ex.printStackTrace(System.err);
                 }
@@ -498,14 +499,14 @@ public class SQL {
             if (deleteCount > 0) {
                 System.out.println(new java.util.Date().toString() + " - " + deleteCount + " sor törölve a szurásterv táblából. tkercsszám: "
                         + db.CoilId.getMyString());
-                MainApp.debug.printDebugMsg(null, SQL.class
+               debug.printDebugMsg(null, SQL.class
                         .getName(), deleteCount
                         + " sor törölve a szurásterv táblából. tekercsszám: "
                         + db.CoilId.getMyString());
             }
 
         } catch (SQLException ex) {
-            MainApp.debug.printDebugMsg(null, SQL.class
+           debug.printDebugMsg(null, SQL.class
                     .getName(), "(error) SQL :", ex);
             ex.printStackTrace(System.err);
         } finally {
@@ -515,7 +516,7 @@ public class SQL {
                     st.close();
 
                 } catch (SQLException ex) {
-                    MainApp.debug.printDebugMsg(null, SQL.class
+                   debug.printDebugMsg(null, SQL.class
                             .getName(), "(error) SQL :", ex);
                     ex.printStackTrace(System.err);
                 }
@@ -526,7 +527,7 @@ public class SQL {
                     con.close();
 
                 } catch (SQLException ex) {
-                    MainApp.debug.printDebugMsg(null, SQL.class
+                   debug.printDebugMsg(null, SQL.class
                             .getName(), "(error) SQL :", ex);
                     ex.printStackTrace(System.err);
                 }

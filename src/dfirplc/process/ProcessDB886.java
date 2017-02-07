@@ -4,10 +4,11 @@
 package dfirplc.process;
 
 import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import dfirplc.db.DB885;
 import dfirplc.db.DB886;
 import dfirplc.net.tcp.TCPConnectionServer;
-import dfirplc.tools.CopyObjectValues;
+import tools.CopyObjectValues;
 import java.util.Date;
 
 /**
@@ -68,7 +69,7 @@ public class ProcessDB886 {
                      */
                     System.out.println(new Date().toString() + " - " + db885.CoilId.getMyString()
                             + " tekercs szúrásterve leadva. ");
-                    MainApp.debug.printDebugMsg(null, ProcessDB886.class.getName(), "SelectDB886 :" + db885.CoilId.getMyString()
+                    debug.printDebugMsg(null, ProcessDB886.class.getName(), "SelectDB886 :" + db885.CoilId.getMyString()
                             + " tekercs szúrásterve leadva. ");
                     
                     MainApp.sql.updateSzurastervLog(db885);
@@ -124,7 +125,7 @@ public class ProcessDB886 {
             tcp.object = CopyObjectValues.copy(tcp.object, tcp.db);
         } catch (IllegalAccessException ex) {
             System.err.println(new Date() + " : " + ex.getMessage());
-            MainApp.debug.printDebugMsg(null, ProcessDB886.class.getName(), "(error) SelectDB886 :", ex);
+            debug.printDebugMsg(null, ProcessDB886.class.getName(), "(error) SelectDB886 :", ex);
         }
     }
 }

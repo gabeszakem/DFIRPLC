@@ -5,10 +5,11 @@
 package dfirplc.process;
 
 import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import dfirplc.db.DB881;
 import dfirplc.db.DB884;
 import dfirplc.net.tcp.TCPConnectionServer;
-import dfirplc.tools.CopyObjectValues;
+import tools.CopyObjectValues;
 import java.util.Date;
 
 /**
@@ -32,7 +33,7 @@ public class ProcessDB884 {
 
         if (dB884.RemovePORTelId != newDB884.RemovePORTelId) {
             System.out.println(new Date().toString() + " - Lecsévélő tekercslevétel: " + newDB884.RemovePORTelId+": "+newDB884.CoilId.getMyString());
-            MainApp.debug.printDebugMsg(null,ProcessDB884.class.getName(),"SelectDB884 : Lecsévélő tekercslevétel: " + newDB884.CoilId.getMyString() );
+           debug.printDebugMsg(null,ProcessDB884.class.getName(),"SelectDB884 : Lecsévélő tekercslevétel: " + newDB884.CoilId.getMyString() );
             for (int i = 0; i < MainApp.servers.length; i++) {
                  /**Nyugtázó telegramm küldéséhez a Lecsévélő tekercslevétel telegramm beállítása*/
                 if (MainApp.servers[i].object.getClass().getName().equals("dfirplc.db.DB881")) {
@@ -46,7 +47,7 @@ public class ProcessDB884 {
             tcp.object = CopyObjectValues.copy(tcp.object, tcp.db);
         } catch (IllegalAccessException ex) {
             System.err.println(new Date() +" : " + ex.getMessage());
-            MainApp.debug.printDebugMsg(null,ProcessDB884.class.getName(),"(error) SelectDB884 :",ex);
+           debug.printDebugMsg(null,ProcessDB884.class.getName(),"(error) SelectDB884 :",ex);
         }
     }
 }

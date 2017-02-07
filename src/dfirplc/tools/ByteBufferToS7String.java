@@ -4,6 +4,8 @@
  */
 package dfirplc.tools;
 
+import tools.ByteBufferToString;
+
 /**
  *
  * @author gkovacs02

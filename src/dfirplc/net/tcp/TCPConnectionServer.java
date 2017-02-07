@@ -1,16 +1,16 @@
 package dfirplc.net.tcp;
 
 import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import dfirplc.net.FillDataToBuffer;
 import dfirplc.tools.ByteBufferToS7String;
-import dfirplc.tools.ByteBufferToString;
+import tools.ByteBufferToString;
 import dfirplc.tools.ClassToString;
 import dfirplc.tools.S7String;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Arrays;
@@ -91,7 +91,7 @@ public class TCPConnectionServer extends Thread {
              * Hibaüzenetek kiírása
              */
             System.err.println(new Date() + " : " + ex.getMessage());
-            MainApp.debug.printDebugMsg(db.getClass().getName(), TCPConnectionServer.class.getName(), "(error) TCPConnectionServer :", ex);
+            debug.printDebugMsg(db.getClass().getName(), TCPConnectionServer.class.getName(), "(error) TCPConnectionServer :", ex);
         }
         this.ProcessSelect = new ProcessSelectDB();
         this.temp=null;
@@ -134,9 +134,9 @@ public class TCPConnectionServer extends Thread {
                                  * tárolunk rész rekordot akkor hiba van A hibát
                                  * kíirjuk.
                                  */
-                                MainApp.debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(error) TCPConnectionServer : Eldobjuk a temp tartalmát");
-                                MainApp.debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "\tbuffer tartalma: " + Arrays.toString(temp));
-                                MainApp.debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "\tbuffer mérete: " + temp.length);
+                                debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(error) TCPConnectionServer : Eldobjuk a temp tartalmát");
+                                debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "\tbuffer tartalma: " + Arrays.toString(temp));
+                                debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "\tbuffer mérete: " + temp.length);
                                 temp = null;
                             }
                             /**
@@ -147,7 +147,7 @@ public class TCPConnectionServer extends Thread {
                             /**
                              * A telegtramm hossza nem megfelelő.
                              */
-                            MainApp.debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(warning) (" + this.db.getClass().getSimpleName() + ") TCPConnectionServer : Hibás telegramhossz: " + receiveTelegram.length);
+                            debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(warning) (" + this.db.getClass().getSimpleName() + ") TCPConnectionServer : Hibás telegramhossz: " + receiveTelegram.length);
                             /**
                              * temp tömbhöz hozzáfűzzük az új telegrammot.
                              */
@@ -169,7 +169,7 @@ public class TCPConnectionServer extends Thread {
                                         System.arraycopy(temp, index * this.dBSize, tmp, 0, this.dBSize);
                                         field(tmp);
                                     }
-                                    MainApp.debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(" + this.db.getClass().getSimpleName() + ") TCPConnectionServer :Eltérő hosszúságú telegram feldolgozva");
+                                   debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(" + this.db.getClass().getSimpleName() + ") TCPConnectionServer :Eltérő hosszúságú telegram feldolgozva");
                                 }
                                 /**
                                  * Kinullázzuk a tempet
@@ -179,7 +179,7 @@ public class TCPConnectionServer extends Thread {
                         }
                     } else {
                         System.err.println(new Date() + " TCPConnectionServer: receiveTelegram = null");
-                        MainApp.debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(error) " + "(" + this.db.getClass().getSimpleName() + ") TCPConnectionServer : receiveTelegram = null");
+                       debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(error) " + "(" + this.db.getClass().getSimpleName() + ") TCPConnectionServer : receiveTelegram = null");
                         }
 
                     /*
@@ -194,7 +194,7 @@ public class TCPConnectionServer extends Thread {
                         } else {
                             length = "NULL";
                         }
-                        MainApp.debug.printDebugMsg(db.getClass().getName(), TCPConnectionServer.class.getName(), ByteBuffer.wrap(receiveTelegram, 0, 2).getShort()
+                       debug.printDebugMsg(db.getClass().getName(), TCPConnectionServer.class.getName(), ByteBuffer.wrap(receiveTelegram, 0, 2).getShort()
                                 + ":: Telegramm hossza: " + length);
                     }
                 } catch (Exception ex) {
@@ -202,7 +202,7 @@ public class TCPConnectionServer extends Thread {
                      * Hiba esetén a hiba kiírása
                      */
                     System.err.println(new Date() + " " + this.getClass() + " " + ex.getMessage());
-                    MainApp.debug.printDebugMsg(db.getClass().getName(), TCPConnectionServer.class.getName(), "(error) TCPConnectionServer :", ex);
+                   debug.printDebugMsg(db.getClass().getName(), TCPConnectionServer.class.getName(), "(error) TCPConnectionServer :", ex);
                 }
             }
         }
@@ -225,7 +225,7 @@ public class TCPConnectionServer extends Thread {
                      * Hiba esetén az üzenetek kíirása
                      */
                     System.err.println(ex.getMessage());
-                    MainApp.debug.printDebugMsg(db.getClass().getName(), TCPConnectionServer.class.getName(), "(error) TCPConnectionServer :", ex);
+                   debug.printDebugMsg(db.getClass().getName(), TCPConnectionServer.class.getName(), "(error) TCPConnectionServer :", ex);
                 }
             }
         }
@@ -308,7 +308,7 @@ public class TCPConnectionServer extends Thread {
                      */
                     System.out.println(new Date() + " " + this.getClass().getName() + " Nincs "
                             + s + " változó deklarálva.");
-                    MainApp.debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(warning) TCPConnectionServer : Nincs " + s + " változó deklarálva.");
+                   debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(warning) TCPConnectionServer : Nincs " + s + " változó deklarálva.");
                 }
 
             }
@@ -331,12 +331,12 @@ public class TCPConnectionServer extends Thread {
              * Hiba esetén üzenet írása a debug.log fájlba.
              */
             System.err.println(new Date() + " : " + ex);
-            MainApp.debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(error) TCPConnectionServer :", ex);
+           debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(error) TCPConnectionServer :", ex);
             try {
-                MainApp.debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "\tbuffer tartalma: " + Arrays.toString(receiveTelegram));
-                MainApp.debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "\tbuffer mérete: " + receiveTelegram.length);
+               debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "\tbuffer tartalma: " + Arrays.toString(receiveTelegram));
+               debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "\tbuffer mérete: " + receiveTelegram.length);
             } catch (Exception e) {
-                MainApp.debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(error) TCPConnectionServer :", e);
+               debug.printDebugMsg(null, TCPConnectionServer.class.getName(), "(error) TCPConnectionServer :", e);
             }
         }
     }

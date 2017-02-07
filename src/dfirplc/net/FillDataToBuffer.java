@@ -3,7 +3,7 @@
  */
 package dfirplc.net;
 
-import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import dfirplc.tools.S7String;
 import java.lang.reflect.Field;
 import java.nio.ByteBuffer;
@@ -99,12 +99,12 @@ public class FillDataToBuffer {
                 } else {
                     System.err.println(new Date() + " " + FillDataToBuffer.class.getName() + " Nincs "
                             + s + " változó deklarálva.");
-                    MainApp.debug.printDebugMsg(null,FillDataToBuffer.class.getName(),"(warning) FillDataToBuffer : Nincs " + s + " változó deklarálva.");
+                    debug.printDebugMsg(null,FillDataToBuffer.class.getName(),"(warning) FillDataToBuffer : Nincs " + s + " változó deklarálva.");
                 }
 
             } catch (Exception ex) {
                 System.err.println(ex);
-                MainApp.debug.printDebugMsg(null,FillDataToBuffer.class.getName(),"(error) ",ex);
+                debug.printDebugMsg(null,FillDataToBuffer.class.getName(),"(error) ",ex);
             }
         }
         byte[] telegram = new byte[pointer];

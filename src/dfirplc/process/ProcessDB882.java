@@ -4,11 +4,12 @@
 package dfirplc.process;
 
 import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import dfirplc.db.DB882;
 import dfirplc.net.tcp.TCPConnectionServer;
 import dfirplc.sql.RecordToBuffer;
-import dfirplc.tools.CloneObject;
-import dfirplc.tools.CopyObjectValues;
+import tools.CloneObject;
+import tools.CopyObjectValues;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -79,7 +80,7 @@ public class ProcessDB882 {
                     tcp.record.add(CloneObject.clone(tcp.db));
                 } catch (InstantiationException | IllegalAccessException ex) {
                     System.err.println(new Date() + " : " + ex.getMessage());
-                    MainApp.debug.printDebugMsg(null, ProcessDB882.class.getName(), "(error) SelectDB882 :", ex);
+                   debug.printDebugMsg(null, ProcessDB882.class.getName(), "(error) SelectDB882 :", ex);
                 }
             }
         } else {
@@ -108,7 +109,7 @@ public class ProcessDB882 {
                         + tcp.record.size() + " record rögzítve");
                 System.out.println(new Date().toString() + " - " + "Tekercs súly a mérlegtől: " + MainApp.removedCoilData.CoilMeasWeight);
                 System.out.println(new Date().toString() + " - " + "Tekercs súly (számított): " + MainApp.removedCoilData.CoilCalWeight);
-                MainApp.debug.printDebugMsg(null, ProcessDB882.class.getName(), "SelectDB882 :" + dB882.CoilId.getMyString()
+               debug.printDebugMsg(null, ProcessDB882.class.getName(), "SelectDB882 :" + dB882.CoilId.getMyString()
                         + " tekercs elkészült. "
                         + tcp.record.size() + " record rögzítve");
                 /*
@@ -130,7 +131,7 @@ public class ProcessDB882 {
                 System.out.println(new Date().toString() + " - " + dB882.CoilId.getMyString()
                         + " bytebuffer mérete: "
                         + buffer.length);
-                MainApp.debug.printDebugMsg(null, ProcessDB882.class.getName(), "SelectDB882 :" + dB882.CoilId.getMyString()
+               debug.printDebugMsg(null, ProcessDB882.class.getName(), "SelectDB882 :" + dB882.CoilId.getMyString()
                         + " bytebuffer mérete: "
                         + buffer.length);
                 /*
@@ -148,7 +149,7 @@ public class ProcessDB882 {
             tcp.object = CopyObjectValues.copy(tcp.object, tcp.db);
         } catch (IllegalAccessException ex) {
             System.err.println(ex.getMessage());
-            MainApp.debug.printDebugMsg(null, ProcessDB882.class.getName(), "(error) SelectDB882 :", ex);
+           debug.printDebugMsg(null, ProcessDB882.class.getName(), "(error) SelectDB882 :", ex);
         }
     }
 }

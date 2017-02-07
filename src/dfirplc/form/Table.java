@@ -11,6 +11,7 @@
 package dfirplc.form;
 
 import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import dfirplc.tools.S7String;
 import java.lang.reflect.Field;
 import java.util.Date;
@@ -47,7 +48,7 @@ public class Table extends javax.swing.JPanel{
                 }
             } catch (IllegalArgumentException | IllegalAccessException ex) {
                 System.err.println(new Date() +" : " + ex.getMessage());
-                MainApp.debug.printDebugMsg(null,Table.class.getName(),"(error) Table :",ex);
+               debug.printDebugMsg(null,Table.class.getName(),"(error) Table :",ex);
             }
         }
          

@@ -9,15 +9,19 @@ import dfirplc.centralograf.UDPConnectionServer;
 import dfirplc.db.*;
 import dfirplc.form.DressFrame;
 import dfirplc.form.Frame_;
-import dfirplc.form.TextAreaLogProgram;
+import form.TextAreaLogProgram;
 import dfirplc.net.CommStruct;
 import dfirplc.net.RW;
 import dfirplc.net.tcp.TCPConnectionServer;
 import dfirplc.sql.SQL;
-import dfirplc.tools.Debug;
+import tools.Debug;
 import dfirplc.tray.Tray;
+import form.LogViewer;
+import java.awt.Color;
 import java.io.IOException;
 import java.net.InetAddress;
+import java.util.ArrayList;
+import table.ColorStruct;
 
 /**
  *
@@ -115,6 +119,12 @@ public class MainApp {
      * Az utoljára levett tekercs.
      */
     public static DB883 removedCoilData = new DB883();
+    /**
+     * Logviewer engedélyezése
+     */
+    public static boolean LOGVIEWERISENABLED=true;
+    
+    public static LogViewer logViewer;
 
     /**
      *
@@ -123,26 +133,26 @@ public class MainApp {
      */
     public static void main(String[] args) throws IOException {
 
-        debug = new Debug(true, 1);
+        debug = new Debug(true, 1,"DFIRPLC");
 
-        MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Program elidítva...");
+        debug.printDebugMsg(null, MainApp.class.getName(), "Program elidítva...");
         if (LOGPANELISENABLED) {
-            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Logpanel engedélyezve...");
+            debug.printDebugMsg(null, MainApp.class.getName(), "Logpanel engedélyezve...");
             try {
                 /**
                  * Új logPanel létrehozása.
                  */
-                textAreaLog = new TextAreaLogProgram();
+                textAreaLog = new TextAreaLogProgram(debug);
 
             } catch (Exception ex) {
                 System.out.println("LogPanel inditása nem sikerült");
-                MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "(error) Logpanel indítása nem sikerült...", ex);
+                debug.printDebugMsg(null, MainApp.class.getName(), "(error) Logpanel indítása nem sikerült...", ex);
             }
         } else {
-            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Logpanel letiltva...");
+            debug.printDebugMsg(null, MainApp.class.getName(), "Logpanel letiltva...");
         }
         System.out.println("PLC IP címe: " + IPADDRESS);
-        MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "PLC IP címe: " + IPADDRESS);
+        debug.printDebugMsg(null, MainApp.class.getName(), "PLC IP címe: " + IPADDRESS);
         /**
          * PLC IP Címe InetAddress formátumban.
          */
@@ -209,7 +219,7 @@ public class MainApp {
             /**
              * Új Frame létrehozása.
              */
-            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Frame engedélyezve...");
+            debug.printDebugMsg(null, MainApp.class.getName(), "Frame engedélyezve...");
             try {
                 frame = new Frame_();
                 /**
@@ -233,7 +243,7 @@ public class MainApp {
                                     frame.refreshPanels(servers);
                                 }
                             } catch (Exception ex) {
-                                MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Frame thread hiba...", ex);
+                                debug.printDebugMsg(null, MainApp.class.getName(), "Frame thread hiba...", ex);
                             }
                         }
                     }
@@ -245,18 +255,18 @@ public class MainApp {
                  */
                 //frame.setVisible(true);
                 System.out.println("Frame engedélyezve...");
-                MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Frame elindítva...");
+                debug.printDebugMsg(null, MainApp.class.getName(), "Frame elindítva...");
 
             } catch (Exception ex) {
                 System.out.println("Frame inditása nem sikerült");
-                MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Frame indítása nem sikerült...");
+                debug.printDebugMsg(null, MainApp.class.getName(), "Frame indítása nem sikerült...");
             }
         } else {
-            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Frame letíltva...");
+            debug.printDebugMsg(null, MainApp.class.getName(), "Frame letíltva...");
         }
 
         if (DRESSPANELISENABLED) {
-            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel engedélyezve...");
+            debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel engedélyezve...");
             try {
                 /**
                  * Új Frame létrehozása.
@@ -280,20 +290,32 @@ public class MainApp {
                                     dress.refreshPanels();
                                 }
                             } catch (Exception ex) {
-                                MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel timer hiba...", ex);
+                                debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel timer hiba...", ex);
                             }
                         }
                     }
                 };
                 timer2.start();
                 System.out.println("DressPanel engedélyezve...");
-                MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel elindítva...");
+                debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel elindítva...");
             } catch (Exception ex) {
                 System.out.println("DressPanel inditása nem sikerült");
-                MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel inditása nem sikerült...");
+                debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel inditása nem sikerült...");
             }
         } else {
-            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel letíltva...");
+            debug.printDebugMsg(null, MainApp.class.getName(), "Dresspanel letíltva...");
+        }
+        
+        if (LOGVIEWERISENABLED) {
+            logViewer = new LogViewer(debug);
+            ArrayList<ColorStruct> colors = new ArrayList();
+            colors.add(new ColorStruct(1, new Color(243, 149, 149), "error"));
+            colors.add(new ColorStruct(1, new Color(233, 173, 32), "warning"));
+            //colors.add(new ColorStruct(2, Color.GREEN, "(Húzvaegyengető)"));
+            //colors.add(new ColorStruct(2, Color.yellow, "(Georg hasító)"));
+            //colors.add(new ColorStruct(2, Color.ORANGE, "(1550-es hasító)"));
+            colors.add(new ColorStruct(1, new Color(204, 229, 255), "info"));
+            logViewer.setColor(colors);
         }
 
         /**
@@ -301,32 +323,41 @@ public class MainApp {
          */
         sql = new SQL();
         System.out.println("SQL kapcsolat létrehozva");
-        MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "SQL kapcsolat létrehozva...");
+        debug.printDebugMsg(null, MainApp.class.getName(), "SQL kapcsolat létrehozva...");
+        
 
         /**
          * tray (tálca) elindítása...
          */
         try {
-            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Tray inditása...");
+            debug.printDebugMsg(null, MainApp.class.getName(), "Tray inditása...");
             Tray tray = new Tray();
-            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Tray elindítva");
+            debug.printDebugMsg(null, MainApp.class.getName(), "Tray elindítva");
         } catch (Exception ex) {
             System.out.println("Tray inditása nem sikerült");
-            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Tray inditása nem sikerült...");
+            debug.printDebugMsg(null, MainApp.class.getName(), "Tray inditása nem sikerült...");
         }
+        
+        
+        
+        
+        
         if (CENTRALOGGRAFMESSAGEENABLE) {
-            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Centralográf üzenet engedélyezve...");
+            debug.printDebugMsg(null, MainApp.class.getName(), "Centralográf üzenet engedélyezve...");
             int centralografPort = 2100;
             int bufferSize = 2048;
             InetAddress centralografIPAddress = InetAddress.getByName(CENTRALOGGRAFIPADDRESS);
             udpCentralograf = new UDPConnectionServer(centralografMessage, centralografPort, bufferSize, centralografIPAddress);
             udpCentralograf.createPanels(servers);
             udpCentralograf.start();
-            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Centralográf üzenet létrehozva UDP-n : " + CENTRALOGGRAFIPADDRESS
+            debug.printDebugMsg(null, MainApp.class.getName(), "Centralográf üzenet létrehozva UDP-n : " + CENTRALOGGRAFIPADDRESS
                     + ":" + centralografPort);
 
         } else {
-            MainApp.debug.printDebugMsg(null, MainApp.class.getName(), "Centralográf üzenet letiltva...");
+            debug.printDebugMsg(null, MainApp.class.getName(), "Centralográf üzenet letiltva...");
         }
+        
+        
+        
     }
 }

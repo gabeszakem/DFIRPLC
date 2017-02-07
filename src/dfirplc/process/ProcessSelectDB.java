@@ -5,6 +5,7 @@
 package dfirplc.process;
 
 import dfirplc.MainApp;
+import static dfirplc.MainApp.debug;
 import dfirplc.net.tcp.TCPConnectionServer;
 import java.util.Date;
 
@@ -39,7 +40,7 @@ public class ProcessSelectDB {
                 ProcessDB884.select(tcp);
             } catch (IllegalArgumentException | IllegalAccessException ex) {
                 System.err.println(new Date() + ex.getMessage());
-                MainApp.debug.printDebugMsg(null,ProcessSelectDB.class.getName(),"(error) SelectDB :",ex);
+               debug.printDebugMsg(null,ProcessSelectDB.class.getName(),"(error) SelectDB :",ex);
             }
         } else if (dbName.contains("DB885")) {
             ProcessDB885.select(tcp);
@@ -49,7 +50,7 @@ public class ProcessSelectDB {
             ProcessDB887.select(tcp);
         }else {
             System.err.println(new Date() + " : " + this.getClass().getName() + " : Nincs ilyen DB");
-            MainApp.debug.printDebugMsg(null,ProcessSelectDB.class.getName(),"(warning) SelectDB : Nincs ilyen DB");
+           debug.printDebugMsg(null,ProcessSelectDB.class.getName(),"(warning) SelectDB : Nincs ilyen DB");
         }
     }
 }
